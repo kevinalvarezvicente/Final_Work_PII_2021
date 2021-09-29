@@ -1,0 +1,95 @@
+[
+    {
+      "name": "Administrador",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "InvitarEmpresa",
+        "BajaEmpresa",
+        "AltaEmpresa",
+        "Habilitación"
+      ],
+      "collaborators": [
+        "Empresa"
+      ]
+    },
+    {
+      "name": "Empresa",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "RecibirInvitacion",
+        "Registrarse",
+        "VerReporte",
+        "PublicarOfertas"
+      ],
+      "collaborators": [
+        "Administrador",
+        "Reportes"
+      ]
+    },
+    {
+      "name": "Emprendedor",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "AltaEmprendedor",
+        "BajaEmprendedor",
+        "VerReporte "
+      ],
+      "collaborators": [
+        "Reportes"
+      ]
+    },
+    {
+      "name": "Reportes",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "MaterialesConstantes",
+        "MaterialesPuntuales",
+        "EntregasPorPeriodo",
+        "MaterialesRecibidos"
+      ],
+      "collaborators": [
+        "Empresa",
+        "Emprendedor"
+      ]
+    },
+    {
+      "name": "Materiales",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        ""
+      ],
+      "collaborators": [
+        "Empresa ",
+        ""
+      ]
+    },
+    {
+      "name": "Buscador",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "PorTiempo",
+        "PorPalabrasClaves",
+        "PorPrecio",
+        "PorCantidad",
+        "porHabilitación",
+        "porUbicación"
+      ],
+      "collaborators": [
+        "Empresa",
+        "Materiales",
+        "Emprendedor"
+      ]
+    }
+  ]
