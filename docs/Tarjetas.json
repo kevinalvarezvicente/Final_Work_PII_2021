@@ -1,0 +1,295 @@
+[
+  {
+    "name": "Ubication",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know country",
+      "Know region",
+      "Know street",
+      "Know streetNumber",
+      "Know postalCode"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "IUser",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "Know email",
+      "Know nameUser",
+      "Know phoneNumber",
+      "Know password",
+      "Know ubication",
+      "Unsuscribe user",
+      ""
+    ],
+    "collaborators": [
+      "Ubication",
+      ""
+    ]
+  },
+  {
+    "name": "Material",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know idMaterial",
+      "Know stock",
+      "Know unit",
+      "Know cost",
+      "Know punctual"
+    ],
+    "collaborators": [
+      "Ubication",
+      "Material_Qual",
+      ""
+    ]
+  },
+  {
+    "name": "OftenStock",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Sort by stock if material is not punctual",
+      "Sort by stock if material is punctual",
+      ""
+    ],
+    "collaborators": [
+      "Material"
+    ]
+  },
+  {
+    "name": "Administrator",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know surname",
+      "Know company to invite",
+      "UnSuscribe company",
+      ""
+    ],
+    "collaborators": [
+      "Invitation"
+    ]
+  },
+  {
+    "name": "ChatBot",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "Create an unique instance of it self"
+    ],
+    "collaborators": [
+      "Message"
+    ]
+  },
+  {
+    "name": "ICommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "Know the next command to be excecuted"
+    ],
+    "collaborators": [
+      "Message"
+    ]
+  },
+  {
+    "name": "Company",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know rut",
+      "Know focus",
+      "Know speciality"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Entrepenur",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know speciality",
+      "Know qualification"
+    ],
+    "collaborators": [
+      "Entrepenur_Qual"
+    ]
+  },
+  {
+    "name": "Publication",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know publicationDate",
+      "Know id"
+    ],
+    "collaborators": [
+      "Material",
+      "Company"
+    ]
+  },
+  {
+    "name": "Search",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Search between publications with a filter"
+    ],
+    "collaborators": [
+      "Publication",
+      "ListAgreement"
+    ]
+  },
+  {
+    "name": "Specialty",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know specialty name",
+      "Know place",
+      "Know the obtaining date",
+      "Know university"
+    ],
+    "collaborators": [
+      "Entreprenur"
+    ]
+  },
+  {
+    "name": "Material_Qual",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "IQualification"
+    ]
+  },
+  {
+    "name": "Entrepeneur_Qual",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know place",
+      "Know creationDate",
+      "Know regulatoryEntity",
+      "Know expirationDate"
+    ],
+    "collaborators": [
+      "IQualification"
+    ]
+  },
+  {
+    "name": "Recyclable",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Residue",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "IQualification",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "Know qualification name",
+      "Know qualification id"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Invitation",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know invitation URL",
+      "Send invitation"
+    ],
+    "collaborators": [
+      "Administration"
+    ]
+  },
+  {
+    "name": "Agreement",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know agreementDate",
+      ""
+    ],
+    "collaborators": [
+      "Entrepenur",
+      "Company",
+      "Material"
+    ]
+  },
+  {
+    "name": "ListAgreement",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know the list of agreements at the moment"
+    ],
+    "collaborators": [
+      "Agreement"
+    ]
+  },
+  {
+    "name": "Message",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know message",
+      "Send message to chatbot",
+      ""
+    ],
+    "collaborators": [
+      "IUser"
+    ]
+  }
+]
