@@ -1,8 +1,9 @@
+
 using System;
 
 namespace Library
 {
-    public class Material_Qual
+    public class UsualStock
     {
     }
 }
