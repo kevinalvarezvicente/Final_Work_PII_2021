@@ -1,0 +1,25 @@
+Clases
+
+Location - Lucas
+Message - Kevin
+Chatbot - Juan
+invitation - Pablo
+Entreprenur - Lucas
+Company - Kevin
+Administrator - Juan
+Material - Pablo
+UsualStock - Lucas
+Specialty - Kevin
+Search - Juan
+ListAgreement - Pablo
+Agreement - Lucas
+Recyclable - Kevin
+Residue - Juan
+Material_Qual - Pablo
+Entreprenur_Qual - Lucas
+Publication - Kevin
+
+Interfases
+IUser - Juan
+ICommand - Pablo
+IQualification - Lucas
