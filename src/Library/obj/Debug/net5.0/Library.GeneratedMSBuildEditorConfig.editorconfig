@@ -6,3 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = Library
+build_property.ProjectDir = C:\Users\lucas\.001 - Facultad\Programacion_2\Final_Work_PII_2021\src\Library\
