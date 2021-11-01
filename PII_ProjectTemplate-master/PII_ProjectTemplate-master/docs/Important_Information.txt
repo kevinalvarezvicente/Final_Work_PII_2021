@@ -1,0 +1,8 @@
+Api to configurate the location:
+https://github.com/ucudal/PII_LocationApiClient/tree/master/src/Program
+
+Username Bot: CER_8_Bot
+Name Bot: CER_Bot
+Url : t.me/CER_8_Bot
+HTTP API: 2085142257:AAGK0NCrRqZDJ4yfX1P_hH5CGp1dzBupn3Y
+CER Bot is an acronym for Cicular Economy Recyclable Bot
