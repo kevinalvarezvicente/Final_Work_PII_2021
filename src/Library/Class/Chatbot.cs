@@ -5,10 +5,10 @@ using Telegram.Bot.Types;
 
 namespace Library
 {
-    public class ChatBot
+    public class TelegramBot
     {
 
-        private const string TELEBRAM_BOT_TOKEN = "";
+        private const string TELEBRAM_BOT_TOKEN = "2085142257:AAGK0NCrRqZDJ4yfX1P_hH5CGp1dzBupn3Y";
         private static TelegramBot instance;
         private ITelegramBotClient bot;
 
@@ -37,7 +37,7 @@ namespace Library
         {
             get
             {
-                return this.BotInfo.Id;
+                return (int)this.BotInfo.Id;
             }
         }
 
