@@ -2,7 +2,7 @@
 
 La economía circular a diferencia del sistema tradicional (economía lineal), promueve la reutilización y reducción de los residuos, reciclaje de los mismos. Busca una produccion aproveche eficientemente todos los productos y subproductos, produce con el fin de que ese residuo sea sostenible en el tiempo por varios CICLOS de vida. Todo esto se busca y se diseña antes de crear el producto, ya se debe pensar que ese residuo que va a generar se pueda volver a utilizar para el mismo u otro producto, por la misma u otra organización.
 
-<img src="t.ly/zgJW">
+<img src="https://uruguaycircular.org/ediciones-anteriores/wp-content/uploads/2019/03/mariposa-economia-circular.jpg">
 
 
 
