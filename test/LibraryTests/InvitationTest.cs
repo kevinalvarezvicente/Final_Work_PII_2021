@@ -11,46 +11,39 @@ using PII_Proyecto_Final_TEMP.src.Library.Class;
 namespace Tests
 {
     /// <summary>
-    /// Prueba de la clase <see cref="Train"/>.
+    /// Prueba de la clase <see cref="Invitation"/>.
     /// </summary>
     [TestFixture]
     public class InvitationTest
     {
         /// <summary>
-        /// El tren para probar.
+        /// La invitacion a probar
         /// </summary>
         private Invitation invitation;
 
         /// <summary>
-        /// Crea un tren para probar.
+        /// Crea una invitacion.
         /// </summary>
         [SetUp]
         public void Setup()
         {
-            this.invitation = new Invitation();
+            Token classtoken = new Token();
+            Token token1 = new Token();
+            token1 = classtoken.createToken(1);
+            this.invitation = new Invitation(token1,"Pablo","Armando");
         }
 
-        /// <summary>
-        /// Prueba que el tren arranque.
-        /// </summary>
-        [Test]
-        public void StartTrainTest()
-        {
-            Assert.NotNull(this.train);
-            this.train.StartEngines();
-            Assert.True(this.train.IsEngineStarted);
-        }
+    
 
         /// <summary>
-        /// Prueba que el tren se detenga.
+        /// Prueba que se genere una invitacion.
         /// </summary>
         [Test]
-        public void StopTrainTest()
+        public void GenerateInvitationTest()
         {
-            Assert.NotNull(this.train);
-            this.train.StartEngines();
-            this.train.StopEngines();
-            Assert.False(this.train.IsEngineStarted);
+            Assert.NotNull(this.invitation);
+            this.invitation.generateInvitation("Pablo", "Armando");
+            //Assert.True(this.invitation.generateInvitation);
         }
     }
 }
