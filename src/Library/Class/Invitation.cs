@@ -30,7 +30,7 @@ namespace Library
             return true;
         }
 
-        public bool aceptInvitation(Invitation invitation)
+        public bool acceptInvitation(Invitation invitation)
         {
             this.confirmInvitation = true;
             return true;
