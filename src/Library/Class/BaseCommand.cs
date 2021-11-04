@@ -1,7 +1,7 @@
 using Library;
 using System;
 using System.Linq;
-using Telegram.Bot.Types;
+using Library.APIs.Telegram.Bot.Types;
 
 namespace PII_Proyecto_Final_TEMP.src.Library.Class
 {

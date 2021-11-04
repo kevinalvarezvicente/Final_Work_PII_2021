@@ -11,12 +11,12 @@ namespace Library
 
         public string NombreInvitado { get; set; }
         public string NombreAdministrador { get; set; }
-        public Token Token { get; set; }
+        public Token Token1 { get; set; }
 
         public Invitation(Token token, string nombreInvitado, string nombreAdministrador){
-            this.token = token;
-            this.nombreInvitado = nombreInvitado;
-            this.nombreAdministrador = nombreAdministrador;
+            this.Token1 = token;
+            this.NombreInvitado = nombreInvitado;
+            this.NombreAdministrador = nombreAdministrador;
         }
         public bool generateInvitation(string nombreInvitadoEnviado, string nombreAdministradorEnviado)
         {
