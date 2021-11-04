@@ -9,6 +9,8 @@ namespace Library
         string nombreAdministrador;
         Token token;
 
+        bool confirmInvitation;
+
         public string NombreInvitado { get; set; }
         public string NombreAdministrador { get; set; }
         public Token Token1 { get; set; }
@@ -17,6 +19,7 @@ namespace Library
             this.Token1 = token;
             this.NombreInvitado = nombreInvitado;
             this.NombreAdministrador = nombreAdministrador;
+            confirmInvitation = false;
         }
         public bool generateInvitation(string nombreInvitadoEnviado, string nombreAdministradorEnviado)
         {
@@ -24,6 +27,12 @@ namespace Library
             Token token1 = new Token();
             token1 = ClassToken.createToken(1);
             Invitation invitacion = new Invitation(token1,nombreInvitadoEnviado,nombreAdministradorEnviado);
+            return true;
+        }
+
+        public bool aceptInvitation(Invitation invitation)
+        {
+            this.confirmInvitation = true;
             return true;
         }
     }
