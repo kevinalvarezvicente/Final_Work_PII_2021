@@ -4,8 +4,9 @@
 // </copyright>
 //--------------------------------------------------------------------------------
 
-using ClassLibrary;
+using Library;
 using NUnit.Framework;
+using PII_Proyecto_Final_TEMP.src.Library.Class;
 
 namespace Tests
 {
@@ -13,12 +14,12 @@ namespace Tests
     /// Prueba de la clase <see cref="Train"/>.
     /// </summary>
     [TestFixture]
-    public class TrainTests
+    public class InvitationTest
     {
         /// <summary>
         /// El tren para probar.
         /// </summary>
-        private Train train;
+        private Invitation invitation;
 
         /// <summary>
         /// Crea un tren para probar.
@@ -26,7 +27,7 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            this.train = new Train();
+            this.invitation = new Invitation();
         }
 
         /// <summary>
