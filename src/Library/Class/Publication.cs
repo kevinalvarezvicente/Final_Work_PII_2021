@@ -6,7 +6,7 @@ namespace Library
 {
     public class Publication
     {
-        public List<Publication> Publications = new List<Publication>();
+        public List<Publication> ListPublications = new List<Publication>();
         public int IdPublication { get; set; }
 
         public List<string> KeyWords = new List<string>();
@@ -24,12 +24,10 @@ namespace Library
             this.PublicationDate = publicationDate;
         }
 
-        public string generatePublication(int idPublication, Material material, Company company, DateTime publicationDate) {
+        public bool generatePublication(int idPublication, Material material, Company company, DateTime publicationDate) {
             Publication publication = new Publication(idPublication, material, company, publicationDate);
-            token1.idToken = id;
-            token1.numberToken = token1.generateToken();
-            this.ListToken.Add(token1);
-            return token1;
+            this.ListPublications.Add(publication);
+            return true;
         }
     }
 }
