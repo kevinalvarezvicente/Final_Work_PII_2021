@@ -12,9 +12,9 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
             numberToken = "";
         }
 
-        public int idToken { get; private set; }
+        public int idToken { get; set; }
 
-        public string numberToken { get; private set; }
+        public string numberToken { get; set; }
 
         public Token createToken(int id)
         {
