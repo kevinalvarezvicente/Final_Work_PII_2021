@@ -1,4 +1,7 @@
 using System;
+using Library;
+using Telegram.Bot.Types;
+
 
 namespace Library
 {
@@ -12,7 +15,7 @@ namespace Library
 
         private string password();
 
-        private Ubication ubication();   
+        private Location location();   
 
         public void unsubscribe()
         {

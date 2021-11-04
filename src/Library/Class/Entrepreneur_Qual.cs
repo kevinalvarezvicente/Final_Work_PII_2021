@@ -1,8 +1,17 @@
+using System;
+
+
 namespace Library
 {
+    
     public class Entrepreneur_Qual : IQualification
     {
-       public Entrepreneur_Qual(string place, string regulatoryEntity, Date creationDate, Date expirationDate)
+        string place;
+        string regulatoryEntity;
+        DateTime creationDate;
+
+        DateTime expirationDate;
+       public Entrepreneur_Qual(string place, string regulatoryEntity, DateTime creationDate, DateTime expirationDate)
         {
         }
 

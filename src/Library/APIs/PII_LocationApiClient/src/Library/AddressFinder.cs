@@ -5,7 +5,7 @@ using PII_Proyecto_Final_TEMP.src.Library.Class;
 namespace Ucu.Poo.Locations.Client
 {
     /// <summary>
-    /// Un buscador de direcciones concreto que usa una API de localización.
+    /// Un buscador de direcciones concreto que usa una API de localizaciï¿½n.
     /// </summary>
     public class AddressFinder : IAddressFinder
     {
@@ -14,18 +14,18 @@ namespace Ucu.Poo.Locations.Client
         /// <summary>
         /// Inicializa una nueva instancia de AddressFinder.
         /// </summary>
-        /// <param name="client">El cliente de la API de localización.</param>
+        /// <param name="client">El cliente de la API de localizaciï¿½n.</param>
         public AddressFinder(LocationApiClient client)
         {
             this.client = client;
         }
 
         /// <summary>
-        /// Determina si existe una dirección.
+        /// Determina si existe una direcciï¿½n.
         /// </summary>
-        /// <param name="address">La dirección a buscar.</param>
-        /// <returns>Una instancia de AddressResult con el resultado de la búsqueda, que incluye si la dirección se
-        /// encontró o no, y si se encontró, la latitud y la longitud de la dirección.</returns>
+        /// <param name="address">La direcciï¿½n a buscar.</param>
+        /// <returns>Una instancia de AddressResult con el resultado de la bï¿½squeda, que incluye si la direcciï¿½n se
+        /// encontrï¿½ o no, y si se encontrï¿½, la latitud y la longitud de la direcciï¿½n.</returns>
         public IAddressResult GetLocation(string address)
         {
             Location location = AsyncContext.Run(() => client.GetLocationAsync(address));
@@ -36,8 +36,8 @@ namespace Ucu.Poo.Locations.Client
     }
 
     /// <summary>
-    /// Una implementación concreta del resutlado de buscar una dirección. Además de las propiedades definidas en
-    /// IAddressResult esta clase agrega una propiedad Location para acceder a las coordenadas de la dirección buscada.
+    /// Una implementaciï¿½n concreta del resultado de buscar una direcciï¿½n. Ademï¿½s de las propiedades definidas en
+    /// IAddressResult esta clase agrega una propiedad Location para acceder a las coordenadas de la direcciï¿½n buscada.
     /// </summary>
     public class AddressResult : IAddressResult
     {
