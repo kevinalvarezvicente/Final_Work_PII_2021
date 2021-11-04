@@ -24,8 +24,8 @@ namespace Library
             this.PublicationDate = publicationDate;
         }
 
-        public string generatePublication() {
-            Publication token1 = new Token();
+        public string generatePublication(int idPublication, Material material, Company company, DateTime publicationDate) {
+            Publication publication = new Publication(idPublication, material, company, publicationDate);
             token1.idToken = id;
             token1.numberToken = token1.generateToken();
             this.ListToken.Add(token1);
