@@ -1,9 +1,3 @@
-//--------------------------------------------------------------------------------
-// <copyright file="TrainTests.cs" company="Universidad Católica del Uruguay">
-//     Copyright (c) Programación II. Derechos reservados.
-// </copyright>
-//--------------------------------------------------------------------------------
-
 using Library;
 using NUnit.Framework;
 using PII_Proyecto_Final_TEMP.src.Library.Class;
@@ -19,7 +13,7 @@ namespace Tests
         /// <summary>
         /// La invitacion a probar
         /// </summary>
-        private Invitation invitation;
+        private Invitation invitationT;
 
         /// <summary>
         /// Crea una invitacion.
@@ -30,7 +24,7 @@ namespace Tests
             Token classtoken = new Token();
             Token token1 = new Token();
             token1 = classtoken.createToken(1);
-            this.invitation = new Invitation(token1,"Pablo","Armando");
+            this.invitationT = new Invitation(token1,"Pablo","Armando");
         }
 
     
@@ -41,9 +35,21 @@ namespace Tests
         [Test]
         public void GenerateInvitationTest()
         {
-            Assert.NotNull(this.invitation);
-            this.invitation.generateInvitation("Pablo", "Armando");
-            //Assert.True(this.invitation.generateInvitation);
+            Assert.NotNull(this.invitationT);
+            this.invitationT.generateInvitation("Pablo", "Armando");
+            Assert.IsTrue(this.invitationT.generateInvitation("Pablo", "Armando"));
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [Test]
+        public void acceptInvitation()
+        {
+            Assert.NotNull(this.invitationT);
+            this.invitationT.acceptInvitation(this.invitationT);
+            Assert.IsTrue(this.invitationT.acceptInvitation(this.invitationT));
+        }
+
     }
 }
