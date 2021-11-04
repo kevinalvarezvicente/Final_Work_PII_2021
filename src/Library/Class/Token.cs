@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PII_Proyecto_Final_TEMP.src.Library.Class
 {
-    class Token
+    public class Token
     {
         private List<Token> ListToken = new List<Token>();
 
