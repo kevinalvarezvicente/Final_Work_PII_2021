@@ -5,7 +5,7 @@ namespace Library
     public class Agreement
     {
         Entrepreneur entrepreneur;
-        Company company;
+        CompanyUser company;
         Material material;
         DateTime agreementDate;
     }
