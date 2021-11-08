@@ -1,47 +1,63 @@
-﻿using System;
-using System.Threading.Tasks;
-using Ucu.Poo.Locations.Client;
+﻿using Library;
 using PII_Proyecto_Final_TEMP.src.Library.Class;
+using PII_Proyecto_Final_TEMP.src.Library.Class.Commands;
+using PII_Proyecto_Final_TEMP.src.Library;
+using System;
+using System.IO;
+using System.Text;
+using Telegram.Bot;
+using Telegram.Bot.Args;
+using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
+using Ucu.Poo.Locations.Client;
+using MySql.Data.MySqlClient.Memcached;
 
-
-namespace Ucu.Poo.LocationApi.Demo
+namespace Final_Work_PII_2021
 {
-    /// <summary>
-    /// Un programa que demuestra el uso del cliente de la API REST de localización.
-    /// </summary>
-    public class Program
+    class Program
     {
-        /// <summary>
-        /// Punto de entrada al programa.
-        /// </summary>
-        public static async Task Main()
+
+        public static void Main()
         {
-            const string addressCentral = "Av. 8 de Octubre 2738";
-            const string addressMullin = "Comandante Braga 2715";
-            LocationApiClient client = new LocationApiClient();
+            LocationApiClient client = null;
+            /*Invitation invit = new Invitation();
+invit.generateInvitation();*/
+            ICommand handler =
+                new HelloCommand(
+                new LoginCommand(
+                new UsernameCommand(
+                new GoodByeCommand(
+                new AddressHandler(new AddressFinder(client),
+                new DistanceHandler(new DistanceCalculator(client), null
+            ))))));
+            Message message = new Message();
+            string response;
 
-            Location locationCentral = await client.GetLocationAsync(addressCentral);
-            Console.WriteLine($"Las coordenadas de '{addressCentral}' son " +
-                $"'{locationCentral.Latitude}:{locationCentral.Longitude}'");
+            Console.WriteLine("Escribí un comando o 'salir':");
+            Console.Write("> ");
 
-            Location locationMullin = await client.GetLocationAsync(addressMullin);
-            Console.WriteLine($"Las coordenadas de '{addressMullin}' son " +
-                $"'{locationMullin.Latitude}:{locationMullin.Longitude}'");
+            while (true)
+            {
+                message.Text = Console.ReadLine();
+                if (message.Text.Equals("salir", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    Console.WriteLine("Salimos");
+                    return;
+                }
 
-            Distance distance = await client.GetDistanceAsync(locationCentral, locationMullin);
-            Console.WriteLine($"La distancia entre '{locationCentral.Latitude},{locationCentral.Longitude}' y "+
-                $"'{locationMullin.Latitude},{locationMullin.Longitude}' es de {distance.TravelDistance} kilómetros.");
-
-            distance = await client.GetDistanceAsync(addressCentral, addressMullin);
-            Console.WriteLine($"La distancia entre '{addressCentral}' y '{addressMullin}' " +
-                $"es de {distance.TravelDistance} kilómetros.");
-
-            await client.DownloadMapAsync(locationCentral.Latitude, locationCentral.Longitude, @"map.png");
-            Console.WriteLine($"Descargado el mapa de '{addressCentral}'");
-
-            await client.DownloadRouteAsync(locationCentral.Latitude, locationCentral.Longitude,
-                locationMullin.Latitude, locationMullin.Longitude, @"route.png");
-            Console.WriteLine($"Descargado el mapa de '{addressCentral}' a '{addressMullin}'");
+                ICommand result = handler.Handle(message, out response);
+                Console.WriteLine(result);
+                if (result == null)
+                {
+                    Console.WriteLine("No entiendo");
+                    Console.Write("> ");
+                }
+                else
+                {
+                    Console.WriteLine(response);
+                    Console.Write("> ");
+                }
+            }
         }
     }
 }

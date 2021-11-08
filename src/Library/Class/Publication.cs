@@ -1,31 +1,34 @@
 using System;
+using System.Collections.Generic;
+using Date;
 
 namespace Library
 {
     public class Publication : IRecyclable
     {
-        int idPublication;
-        string [] keyWords;
-        Material material;
+        public List<Publication> ListPublications = new List<Publication>();
+        public int IdPublication { get; set; }
 
-        CompanyUser company;
+        public List<string> KeyWords = new List<string>();
 
-        DateTime publicationDate;
-        bool reciylable;
+        public Material Material { get; set; }
 
-        public bool IsRecyclable(bool recyclable)
-        {
-            if (recyclable)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        public Company Company { get; set; }
+
+        public DateTime PublicationDate { get; set; }
+
+        public Publication(int idPublication, Material material, Company company, DateTime publicationDate){
+            this.IdPublication = idPublication;
+            this.Material = material;
+            this.Company = company;
+            this.PublicationDate = publicationDate;
         }
-        
-        
+
+        public bool generatePublication(int idPublication, Material material, Company company, DateTime publicationDate) {
+            Publication publication = new Publication(idPublication, material, company, publicationDate);
+            this.ListPublications.Add(publication);
+            return true;
+        }
     }
 
 

@@ -1,30 +1,39 @@
 using Library;
-using PII_Proyecto_Final_TEMP;
+using PII_Proyecto_Final_TEMP.src.Library.Class;
 
 namespace Library
 {
     public class Invitation
     {
+        string nombreInvitado;
+        string nombreAdministrador;
+        Token token;
 
-        public Invitation()
+        bool confirmInvitation;
+
+        public string NombreInvitado { get; set; }
+        public string NombreAdministrador { get; set; }
+        public Token Token1 { get; set; }
+
+        public Invitation(Token token, string nombreInvitado, string nombreAdministrador){
+            this.Token1 = token;
+            this.NombreInvitado = nombreInvitado;
+            this.NombreAdministrador = nombreAdministrador;
+            confirmInvitation = false;
+        }
+        public bool generateInvitation(string nombreInvitadoEnviado, string nombreAdministradorEnviado)
         {
-            idInvitation = "";
+            Token ClassToken = new Token();
+            Token token1 = new Token();
+            token1 = ClassToken.createToken(1);
+            Invitation invitacion = new Invitation(token1,nombreInvitadoEnviado,nombreAdministradorEnviado);
+            return true;
         }
 
-        public string idInvitation { get; private set; }
-
-        public Invitation createInvitation(int id)
+        public bool acceptInvitation(Invitation invitation)
         {
-            Invitation invitation1 = new Invitation();
-            invitation1.idInvitation = invitation1.generateInvitation(id);
-            return invitation1;
-        }
-
-        public string generateInvitation(int id)
-        {
-            Token classtoken = new Token();
-            classtoken.createToken(id);
-            return classtoken.ToString();
+            this.confirmInvitation = true;
+            return true;
         }
     }
 }

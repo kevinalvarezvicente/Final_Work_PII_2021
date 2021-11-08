@@ -8,5 +8,11 @@ namespace Library
         CompanyUser company;
         Material material;
         DateTime agreementDate;
+        
+        public Agreement (Entrepreneur entrepreneur, CompanyUser company, Material material, DateTime agreementDate)
+        {
+
+        }
     }
 }
+

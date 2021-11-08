@@ -1,23 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Library
+namespace PII_Proyecto_Final_TEMP.src.Library.Class
 {
-    class Token : IValidateToken
+    public class Token
     {
         private List<Token> ListToken = new List<Token>();
 
         public Token() {
             idToken = 0;
-            numberToken = Guid.Empty;
+            numberToken = "";
         }
 
-        public int idToken { get; private set; }
+        public int idToken { get; set; }
 
-        public Guid numberToken { get; private set; }
+        public string numberToken { get; set; }
 
         public Token createToken(int id)
         {
@@ -29,7 +26,7 @@ namespace Library
         }
 
 
-        public Guid generateToken() {
+        public string generateToken() {
             //<summary>
             //Crea un objeto de tipo Guid
             //</summary>
@@ -44,22 +41,9 @@ namespace Library
             //Cifra el token y lo guarda en Etoken
             //</summary>
             //<param name = "Etoken"> String con el token cifrado </param>
-            string Etoken = Convert.ToBase64String(GToE); //Acá se guarda en la persistencia
-            return Gtoken;
-        }
-
-        public bool isValid(Guid tokenv)
-        {
-            byte[] TToV = tokenv.ToByteArray();
-            string Vtoken = Convert.ToBase64String(TToV);
-            if (Vtoken == Etoken) //Acá se compara con la persistencia
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            string Etoken = Convert.ToBase64String(GToE);
+            Console.WriteLine(Etoken);
+            return Etoken;
         }
        
     }

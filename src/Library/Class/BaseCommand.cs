@@ -1,9 +1,6 @@
 using Library;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Telegram.Bot.Types;
 
 namespace PII_Proyecto_Final_TEMP.src.Library.Class
@@ -30,7 +27,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         public string[] Keywords { get; set; }
 
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="BaseHandler"/>.
+        /// Inicializa una nueva instancia de la clase <see cref="BaseCommand"/>.
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
         public BaseCommand(ICommand next)

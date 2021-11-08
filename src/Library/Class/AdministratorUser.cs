@@ -11,11 +11,5 @@ namespace Library
 
         public string NameCompany { get; private set; }
         public string Ocuppation { get; private set; }
-
-        public void Invite(int id)
-        {
-            Invitation inv = new Invitation();
-            inv.createInvitation(id);
-        }
     }
 }
