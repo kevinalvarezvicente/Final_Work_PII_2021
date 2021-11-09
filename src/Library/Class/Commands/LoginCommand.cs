@@ -5,16 +5,16 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class.Commands
     class LoginCommand : BaseCommand
     {
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="HelloHandler"/>. Esta clase procesa el mensaje "hola".
+        /// Inicializa una nueva instancia de la clase <see cref="LoginCommand"/>. Esta clase procesa el mensaje "/login".
         /// </summary>
-        /// <param name="next">El próximo "handler".</param>
+        /// <param name="next">El próximo "command".</param>
         public LoginCommand(BaseCommand next) : base(next)
         {
             this.Keywords = new string[] { "/login" };
         }
 
         /// <summary>
-        /// Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
+        /// Procesa el mensaje "/login" y retorna true; retorna false en caso contrario.
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="response">La respuesta al mensaje procesado.</param>
