@@ -5,8 +5,12 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
 {
     public class Token
     {
+        /// <param name="ListToken">Lista de los tokens creados con su identificador.</param>
         private List<Token> ListToken = new List<Token>();
 
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="Token"/>.
+        /// </summary>
         public Token() {
             idToken = 0;
             numberToken = "";

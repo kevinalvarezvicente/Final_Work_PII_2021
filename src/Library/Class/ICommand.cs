@@ -5,22 +5,24 @@ namespace Library
     public interface ICommand
     {
         /// <summary>
-        /// Obtiene el próximo "handler".
+        /// Obtiene el próximo "command".
+        /// La interfaz ICommand se crea para cumplir con implementación del patrón Chain Of Responsibility.
         /// </summary>
-        /// <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
+        /// <value>El "command" que será invocado si este "command" no procesa el mensaje.</value>
+        /// 
         ICommand Next { get; set; }
 
         /// <summary>
-        /// Procesa el mensaje o la pasa al siguiente "handler" si existe.
+        /// Procesa el mensaje o la pasa al siguiente "command" si existe.
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="response">La respuesta al mensaje procesado.</param>
-        /// <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
+        /// <returns>El "command" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
         ICommand Handle(Message message, out string response);
 
         /// <summary>
-        /// Retorna este "handler" al estado inicial y cancela el próximo "handler" si existe. Es utilizado para que los
-        /// "handlers" que procesan varios mensajes cambiando de estado entre mensajes puedan volver al estado inicial en
+        /// Retorna este "command" al estado inicial y cancela el próximo "command" si existe. Es utilizado para que los
+        /// "commands" que procesan varios mensajes cambiando de estado entre mensajes puedan volver al estado inicial en
         /// caso de error por ejemplo.
         /// </summary>
         void Cancel();

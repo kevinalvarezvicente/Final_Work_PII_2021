@@ -7,10 +7,10 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
     class GoodByeCommand : BaseCommand
     {
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="GoodByeHandler"/>. Esta clase procesa el mensaje "chau"
-        /// y el mensaje "adiós" -un ejemplo de cómo un "handler" puede procesar comandos con sinónimos.
+        /// Inicializa una nueva instancia de la clase <see cref="GoodByeCommand"/>. Esta clase procesa el mensaje "chau"
+        /// y el mensaje "adiós"
         /// </summary>
-        /// <param name="next">El próximo "handler".</param>
+        /// <param name="next">El próximo "command".</param>
         public GoodByeCommand(BaseCommand next) : base(next)
         {
             this.Keywords = new string[] { "chau", "adiós" };

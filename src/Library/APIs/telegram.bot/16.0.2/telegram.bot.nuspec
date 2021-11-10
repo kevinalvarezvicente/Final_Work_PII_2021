@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Telegram.Bot</id>
+    <version>16.0.2</version>
+    <title>Telegram Bot API Client</title>
+    <authors>RoundRobin,Poulad,tuscen</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>package-icon.png</icon>
+    <projectUrl>https://github.com/TelegramBots/telegram.bot</projectUrl>
+    <description>The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram.</description>
+    <copyright>Copyright © Robin Müller 2016</copyright>
+    <tags>Telegram Bot Api Payment Inline Games</tags>
+    <repository type="git" url="https://github.com/TelegramBots/telegram.bot.git" commit="62f53f218f019b55404ed21a9c254baa718aa47e" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks.Extensions" version="4.5.4" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks.Extensions" version="4.5.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
