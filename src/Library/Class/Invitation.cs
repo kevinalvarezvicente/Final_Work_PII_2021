@@ -5,8 +5,6 @@ namespace Library
 {
     public class Invitation
     {
-        string guestName;
-        string AdminName;
         Token token;
 
         bool confirmInvitation;
