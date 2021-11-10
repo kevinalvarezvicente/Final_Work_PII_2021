@@ -3,10 +3,16 @@ using Telegram.Bot.Types;
 
 namespace Library
 {
+    /// <summary>
+    /// Clase realizada con el patrón singleton
+    /// Se crea una unica instancia de esta clase y en cuyo caso de que se quiera crear otro devuelve al anterior.
+    /// </summary>
     public class TelegramBot
     {
 
+        /// <value>Guarda el identificador unico del bot de Telegram.</value>
         private const string TELEBRAM_BOT_TOKEN = "2085142257:AAGK0NCrRqZDJ4yfX1P_hH5CGp1dzBupn3Y";
+
         private static TelegramBot instance;
         private ITelegramBotClient bot;
 
