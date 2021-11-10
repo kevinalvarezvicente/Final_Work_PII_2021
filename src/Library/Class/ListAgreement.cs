@@ -5,6 +5,6 @@ namespace Library
 {
     public class ListAgreement
     {
-        private List<Agreement> listAgreement();
+        //private List<Agreement> listAgreement();
     }
 }
