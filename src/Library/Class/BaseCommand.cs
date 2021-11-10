@@ -1,27 +1,27 @@
 using Library;
 using System;
 using System.Linq;
-using Telegram.Bot.Types;
+using telegram.Bot.Types;
 
 namespace PII_Proyecto_Final_TEMP.src.Library.Class
 {
     /// <summary>
     /// Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una
-    /// cadena de "handlers" que pueden procesar o no el mensaje. Cada "handler" decide si procesa el mensaje, o si se lo
+    /// cadena de "commands" que pueden procesar o no el mensaje. Cada "command" decide si procesa el mensaje, o si se lo
     /// pasa al siguiente. Esta clase base implmementa la responsabilidad de recibir el mensaje y pasarlo al siguiente
-    /// "handler" en caso que el mensaje no sea procesado. La responsabilidad de decidir si el mensaje se procesa o no, y
+    /// "command" en caso que el mensaje no sea procesado. La responsabilidad de decidir si el mensaje se procesa o no, y
     /// de procesarlo, se delega a las clases sucesoras de esta clase base.
     /// </summary>
     public abstract class BaseCommand : ICommand
     {
         /// <summary>
-        /// Obtiene el próximo "handler".
+        /// Obtiene el próximo "command".
         /// </summary>
-        /// <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
+        /// <value>El "command" que será invocado si este "command" no procesa el mensaje.</value>
         public ICommand Next { get; set; }
 
         /// <summary>
-        /// Obtiene o asigna el conjunto de palabras clave que este "handler" puede procesar.
+        /// Obtiene o asigna el conjunto de palabras clave que este "command" puede procesar.
         /// </summary>
         /// <value>Un array de palabras clave.</value>
         public string[] Keywords { get; set; }
@@ -29,7 +29,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="BaseCommand"/>.
         /// </summary>
-        /// <param name="next">El próximo "handler".</param>
+        /// <param name="next">El próximo "command".</param>
         public BaseCommand(ICommand next)
         {
             this.Next = next;
@@ -39,7 +39,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         /// Inicializa una nueva instancia de la clase <see cref="BaseCommand"/> con una lista de comandos.
         /// </summary>
         /// <param name="keywords">La lista de comandos.</param>
-        /// <param name="next">El próximo "handler".</param>
+        /// <param name="next">El próximo "command".</param>
         public BaseCommand(string[] keywords, ICommand next)
         {
             this.Keywords = keywords;
@@ -68,7 +68,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         }
 
         /// <summary>
-        /// Determina si este "handler" puede procesar el mensaje. En la clase base se utiliza el array
+        /// Determina si este "command" puede procesar el mensaje. En la clase base se utiliza el array
         /// <see cref="BaseHandler.Keywords"/> para buscar el texto en el mensaje ignorando mayúsculas y minúsculas. Las
         /// clases sucesores pueden sobreescribir este método para proveer otro mecanismo para determina si procesan o no
         /// un mensaje.
@@ -88,11 +88,11 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         }
 
         /// <summary>
-        /// Procesa el mensaje o la pasa al siguiente "handler" si existe.
+        /// Procesa el mensaje o la pasa al siguiente "command" si existe.
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="response">La respuesta al mensaje procesado.</param>
-        /// <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
+        /// <returns>El "command" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
         public ICommand Handle(Message message, out string response)
         {
             if (this.InternalHandle(message, out response))
@@ -110,7 +110,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         }
 
         /// <summary>
-        /// Retorna este "handler" al estado inicial. En los "handler" sin estado no hace nada. Los "handlers" que
+        /// Retorna este "command" al estado inicial. En los "commands" sin estado no hace nada. Los "commands" que
         /// procesan varios mensajes cambiando de estado entre mensajes deben sobreescribir este método para volver al
         /// estado inicial.
         /// </summary>

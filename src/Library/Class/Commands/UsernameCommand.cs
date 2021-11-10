@@ -6,7 +6,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class.Commands
     class UsernameCommand : BaseCommand
     {
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="HelloHandler"/>. Esta clase procesa el mensaje "hola".
+        /// Inicializa una nueva instancia de la clase <see cref="UsernameCommand"/>. Esta clase procesa el usuario y password ingresada por el usuario.
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
         public UsernameCommand(BaseCommand next) : base(next)
