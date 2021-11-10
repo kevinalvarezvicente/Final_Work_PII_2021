@@ -2,8 +2,8 @@ namespace Library
 {
     public class CompanyUser : GUser
     {
-        public CompanyUser(string idUser, string email, string nameUser, string phoneNumber, string password, string location, string nameCompany, string ocuppation)
-           : base(idUser, email, nameUser, phoneNumber, password, location)
+        public CompanyUser(string idUser, string email, string nameUser, string phoneNumber, string location, string nameCompany, string ocuppation)
+           : base(idUser, email, nameUser, phoneNumber, location)
         {
             this.NameCompany = nameCompany;
             this.Ocuppation = ocuppation;
