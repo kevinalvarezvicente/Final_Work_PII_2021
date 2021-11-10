@@ -12,15 +12,13 @@ namespace Library
         /// <param name="email">email del usuario</param>
         /// <param name="nameUser">nombre de usuario</param>
         /// <param name="phoneNumber">telefono del usuario</param>
-        /// <param name="password">contraseña del usuario</param>
         /// <param name="location">ubicacion del usuario</param>
-        public GUser(string idUser, string email, string nameUser, string phoneNumber, string password, string location)
+        public GUser(string idUser, string email, string nameUser, string phoneNumber, string location)
         {
             this.IdUser = idUser;
             this.Email = email;
             this.NameUser = nameUser;
             this.PhoneNumber = phoneNumber;
-            this.Password = password;
             this.Location = location;
             Active = 1;
         }
@@ -29,7 +27,6 @@ namespace Library
         public object Email { get; private set; }
         public string NameUser { get; private set; }
         public string PhoneNumber { get; private set; }
-        public string Password { get; private set; }
         public string Location { get; private set; }
         public int Active { get; private set; }
 

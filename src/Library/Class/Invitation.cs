@@ -5,28 +5,28 @@ namespace Library
 {
     public class Invitation
     {
-        string nombreInvitado;
-        string nombreAdministrador;
+        string guestName;
+        string AdminName;
         Token token;
 
         bool confirmInvitation;
 
-        public string NombreInvitado { get; set; }
-        public string NombreAdministrador { get; set; }
+        public string guestName { get; set; }
+        public string AdminName { get; set; }
         public Token Token1 { get; set; }
 
-        public Invitation(Token token, string nombreInvitado, string nombreAdministrador){
+        public Invitation(Token token, string guestName, string AdminName){
             this.Token1 = token;
-            this.NombreInvitado = nombreInvitado;
-            this.NombreAdministrador = nombreAdministrador;
+            this.guestName = guestName;
+            this.AdminName = AdminName;
             confirmInvitation = false;
         }
-        public bool generateInvitation(string nombreInvitadoEnviado, string nombreAdministradorEnviado)
+        public bool generateInvitation(string guestNameSend, string AdminNameSend)
         {
             Token ClassToken = new Token();
             Token token1 = new Token();
             token1 = ClassToken.createToken(1);
-            Invitation invitacion = new Invitation(token1,nombreInvitadoEnviado,nombreAdministradorEnviado);
+            Invitation invitation = new Invitation(token1,guestNameSend,AdminNameSend);
             return true;
         }
 
