@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Library
 {
@@ -12,8 +13,8 @@ namespace Library
 
         private List<string> keyWords();
 
-        private Date initialDate{get; }
+        private DateTime initialDate{get; }
 
-        private Date finalDate{get; }
+        private DateTime finalDate{get; }
     }
 }
