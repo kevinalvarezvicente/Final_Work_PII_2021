@@ -8,13 +8,14 @@
 
 Nuestro plan de acción para la siguiente entrega es el siguiente:
 
-> :thinking: Tenemos que cumplir con varios casos se uso y la implementación del chatbot en un tiempo corto por lo cual pensamos un plan de accion diferente para aumentra el rendimiento del equipo.
+> :thinking: Tenemos que cumplir con varios casos se uso y la implementación del chatbot en un tiempo corto por lo cual pensamos un plan de accion diferente para aumentar el rendimiento del equipo.
 
 ## Nuestro plan
 
 Identificamos requisitos claves en el desarollo del proyecto y estos son los siguientes:
 
 **Kevin Alvarez** - Implementación del bot con telegram
+
 **Kevin Alvarez** - Chat bot funcionando con el patrón de diseño chain of responsability
 
 ## Casos de uso
