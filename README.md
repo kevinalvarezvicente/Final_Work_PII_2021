@@ -43,8 +43,9 @@ Identificamos requisitos claves en el desarollo del proyecto y estos son los sig
 
 **Juan Campos** - Como emprendedor, quiero saber cuántos materiales o residuos consumí en un período de tiempo, para de esa forma tener un control de mis insumos.
 
-**Kevin Alvarez**  ### Persistencia de la información
+**Kevin Alvarez**  
+### Persistencia de la información
 Nuestro chatbot necesitará guardar la información de empresas, emprendedores, materiales, etc. Para esto utilizaremos una interface que permitirá realizar persistencia de datos (guardar y recuperar) y luego una implemnentación utilizando archivos. Al cambiar la implementación de la interface de la abse de datos, el chatbot debería seguir funcionando sin cambios.
 
 ## Hitos
-Es de obligatoriedad el entregar los requisitos con el nombre del integrante del equipo para el viernes 19 de noviembre incluyendo los test de cada caso de uso / clase asignada.
+Es de **obligatoriedad** el entregar los requisitos con el nombre del integrante del equipo para el **viernes 19 de noviembre** incluyendo los **test** de cada caso de uso / clase asignada.
