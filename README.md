@@ -48,4 +48,4 @@ Identificamos requisitos claves en el desarollo del proyecto y estos son los sig
 Nuestro chatbot necesitará guardar la información de empresas, emprendedores, materiales, etc. Para esto utilizaremos una interface que permitirá realizar persistencia de datos (guardar y recuperar) y luego una implemnentación utilizando archivos. Al cambiar la implementación de la interface de la abse de datos, el chatbot debería seguir funcionando sin cambios.
 
 ## Hitos
-Es de **obligatoriedad** el entregar los requisitos con el nombre del integrante del equipo para el **viernes 19 de noviembre** incluyendo los **test** de cada caso de uso / clase asignada.
+Es de **obligatoriedad** el entregar los requisitos con el nombre del integrante del equipo para el **viernes 19 de noviembre 10:00pm** incluyendo los **test** de cada caso de uso / clase asignada. 
