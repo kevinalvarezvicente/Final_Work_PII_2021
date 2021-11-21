@@ -19,7 +19,7 @@ namespace FINAL_WORK_PII_2021.src.Library.Class
             ITelegramBotClient bot = telegramBot.Client;
 
             //Asigno un gestor de mensajes
-            bot.OnMessage += OnMessage;
+            //bot.OnMessage += OnMessage;
 
             //Inicio la escucha de mensajes
             bot.StartReceiving();

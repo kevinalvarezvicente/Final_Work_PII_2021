@@ -5,6 +5,9 @@ namespace Library
 {
     public interface IQualification
     {
+        void GetQualification(){
+            
+        }
         
     }
 }

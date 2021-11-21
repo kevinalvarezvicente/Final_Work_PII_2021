@@ -21,10 +21,9 @@ namespace Library
         }
         public bool generateInvitation(string guestNameSend, string AdminNameSend)
         {
-            Token ClassToken = new Token();
-            Token token1 = new Token();
-            token1 = ClassToken.createToken(1);
-            Invitation invitation = new Invitation(token1,guestNameSend,AdminNameSend);
+            Token classToken = new Token();
+            classToken = classToken.createToken(1);
+            Invitation invitation = new Invitation(classToken, guestNameSend, AdminNameSend);
             return true;
         }
 

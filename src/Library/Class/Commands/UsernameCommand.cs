@@ -1,9 +1,9 @@
 using System;
 using Telegram.Bot.Types;
 
-namespace PII_Proyecto_Final_TEMP.src.Library.Class.Commands
+namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
 {
-    class UsernameCommand : BaseCommand
+    public class UsernameCommand : BaseCommand
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="UsernameCommand"/>. Esta clase procesa el usuario y password ingresada por el usuario.
@@ -25,9 +25,12 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class.Commands
             String SMessage = message.Text.ToString();
             if (SMessage.Contains(',')) { 
                 string[] usuPass= SMessage.Split(',');
-                response = "Tu usuario es: " + usuPass[0] + "y tu contraseña es : " + usuPass[1];
+                response = "Tu usuario es: " + usuPass[0] + " y tu contraseña es : " + usuPass[1];
+            } 
+            else 
+            {
+                response = "Datos erroneos";
             }
-            response = "Datos erroneos";
             return true;
         }
     }

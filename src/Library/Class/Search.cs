@@ -11,7 +11,7 @@ namespace Library
 
         private string category{get; }
 
-        private List<string> keyWords();
+        //private List<string> keyWords();
 
         private DateTime initialDate{get; }
 

@@ -1,5 +1,6 @@
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using UserTelgram = Telegram.Bot.Types.User;
 
 namespace Library
 {
@@ -11,14 +12,14 @@ namespace Library
     {
 
         /// <value>Guarda el identificador unico del bot de Telegram.</value>
-        private const string TELEBRAM_BOT_TOKEN = "2085142257:AAGK0NCrRqZDJ4yfX1P_hH5CGp1dzBupn3Y";
+        private const string TELEGRAM_BOT_TOKEN = "2085142257:AAGK0NCrRqZDJ4yfX1P_hH5CGp1dzBupn3Y";
 
         private static TelegramBot instance;
         private ITelegramBotClient bot;
 
         private TelegramBot()
         {
-            this.bot = new TelegramBotClient(TELEBRAM_BOT_TOKEN);
+            this.bot = new TelegramBotClient(TELEGRAM_BOT_TOKEN);
         }
 
         public ITelegramBotClient Client
@@ -29,7 +30,7 @@ namespace Library
             }
         }
 
-        private User BotInfo
+        private UserTelgram BotInfo
         {
             get
             {
