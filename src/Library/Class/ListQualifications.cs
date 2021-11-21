@@ -5,6 +5,6 @@ namespace Library
 {
     public class ListQualification
     {
-        private List<ListQualification> listQualifications();
+        private List<ListQualification> listQualifications;
     }
 }

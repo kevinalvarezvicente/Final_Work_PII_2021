@@ -3,7 +3,8 @@ using System;
 using System.Linq;
 using Telegram.Bot.Types;
 
-namespace PII_Proyecto_Final_TEMP.src.Library.Class
+namespace FINAL_WORK_PII_2021.src.Library.Class
+
 {
     /// <summary>
     /// Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una

@@ -1,7 +1,7 @@
 ﻿using Library;
+using FINAL_WORK_PII_2021.src.Library.Class.Commands;
 using Telegram.Bot.Types;
 using System;
-using Ucu.Poo.Locations.Client;
 
 namespace Final_Work_PII_2021
 {
@@ -10,16 +10,19 @@ namespace Final_Work_PII_2021
 
         public static void Main()
         {
-            LocationApiClient client = null;
+
+
             /*Invitation invit = new Invitation();
             invit.generateInvitation();*/
             ICommand commandICommand =
                 new HelloCommand(
                 new LoginCommand(
+                new InvitationCommand(
                 new UsernameCommand(
-                new GoodByeCommand(
+                new GoodByeCommand(null
                 
-            ))));
+            )))));
+            
             Message message = new Message();
             string response;
 
@@ -35,7 +38,7 @@ namespace Final_Work_PII_2021
                     return;
                 }
 
-                ICommand result = commandICommand.Handle(message, out response);
+               ICommand result = commandICommand.Handle(message, out response);
                 Console.WriteLine(result);
                 if (result == null)
                 {

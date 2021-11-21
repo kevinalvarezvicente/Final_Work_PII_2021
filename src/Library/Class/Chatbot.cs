@@ -1,5 +1,6 @@
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using UserTelgram = Telegram.Bot.Types.User;
 
 namespace Library
 {
@@ -29,7 +30,7 @@ namespace Library
             }
         }
 
-        private User BotInfo
+        private UserTelgram BotInfo
         {
             get
             {

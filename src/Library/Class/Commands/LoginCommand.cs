@@ -1,8 +1,8 @@
 using Telegram.Bot.Types;
 
-namespace PII_Proyecto_Final_TEMP.src.Library.Class.Commands
+namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
 {
-    class LoginCommand : BaseCommand
+    public class LoginCommand : BaseCommand
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="LoginCommand"/>. Esta clase procesa el mensaje "/login".
