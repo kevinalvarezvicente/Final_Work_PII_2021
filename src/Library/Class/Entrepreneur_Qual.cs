@@ -8,7 +8,6 @@ namespace Library
     {
         string regulatoryEntity;
         DateTime creationDate;
-
         DateTime expirationDate;
        public Entrepreneur_Qual(string regulatoryEntity, DateTime creationDate, DateTime expirationDate)
         {

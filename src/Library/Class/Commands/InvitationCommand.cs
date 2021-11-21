@@ -21,6 +21,16 @@ namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
             {
                 response = "¿Qué empresa quieres invitar?";
                 return true;
+                // if(UsernameCommand usuPass [0] == admin)
+                //     {
+                //     response = "¿Qué empresa quieres invitar?";
+                //     return true;
+                //     }
+                // else
+                //     {
+                //         response = "¿Escribe el código de invitacion que te enviamos por correo";
+                //         return true;
+                //     }
             }
 
             response = string.Empty;
