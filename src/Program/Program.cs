@@ -1,23 +1,24 @@
 ﻿using Library;
 using Telegram.Bot.Types;
 using System;
-using Ucu.Poo.Locations.Client;
+using PII_Proyecto_Final_TEMP.src.Library.Class;
+using PII_Proyecto_Final_TEMP.src.Library.Class.Commands;
 
-namespace Final_Work_PII_2021
+namespace Library
 {
     class Program
     {
 
         public static void Main()
         {
-            LocationApiClient client = null;
+            /*LocationApiClient client = null;*/
             /*Invitation invit = new Invitation();
             invit.generateInvitation();*/
             ICommand commandICommand =
                 new HelloCommand(
                 new LoginCommand(
                 new UsernameCommand(
-                new GoodByeCommand(
+                new GoodByeCommand(null
                 
             ))));
             Message message = new Message();

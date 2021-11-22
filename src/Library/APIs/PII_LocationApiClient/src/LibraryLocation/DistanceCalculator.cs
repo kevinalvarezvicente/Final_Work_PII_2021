@@ -1,11 +1,12 @@
 using Ucu.Poo.Locations.Client;
-using Nito.AsyncEx;
+/*using Nito.AsyncEx;*/
 
 
 namespace Ucu.Poo.Locations.Client
 {
+    /*
     /// <summary>
-    /// Un calculador de distancias concreto que utiliza una API de localización para calcular la distancia entre dos
+    /// Un calculador de distancias concreto que utiliza una API de localizaciï¿½n para calcular la distancia entre dos
     /// direcciones.
     /// </summary>
     public class DistanceCalculator : IDistanceCalculator
@@ -19,11 +20,11 @@ namespace Ucu.Poo.Locations.Client
 
         public IDistanceResult CalculateDistance(string fromAddress, string toAddress)
         {
-            // La API de localización ofrece un método para obtener la distancia entre dos direcciones; aquí se buscan
-            // primero las coordenadas de las direcciones; esto permite determinar cuál de las dos direcciones no existe.
+            // La API de localizaciï¿½n ofrece un mï¿½todo para obtener la distancia entre dos direcciones; aquï¿½ se buscan
+            // primero las coordenadas de las direcciones; esto permite determinar cuï¿½l de las dos direcciones no existe.
             //
-            // Los métodos de la API de localización son async. Como el resultado de las dos primeras llamadas se utiliza
-            // en la tercera, los métodos deben ser invocados en forma sincrónica. Por eso el uso de AsyncContext.
+            // Los mï¿½todos de la API de localizaciï¿½n son async. Como el resultado de las dos primeras llamadas se utiliza
+            // en la tercera, los mï¿½todos deben ser invocados en forma sincrï¿½nica. Por eso el uso de AsyncContext.
             Location fromLocation = AsyncContext.Run(() => client.GetLocationAsync(fromAddress));
             Location toLocation = AsyncContext.Run(() => client.GetLocationAsync(toAddress));
             Distance distance = AsyncContext.Run(() => client.GetDistanceAsync(fromLocation, toLocation));
@@ -35,7 +36,7 @@ namespace Ucu.Poo.Locations.Client
     }
 
     /// <summary>
-    /// Una implementación concreta del resutlado de calcular distancias. Además de las propiedades definidas en
+    /// Una implementaciï¿½n concreta del resutlado de calcular distancias. Ademï¿½s de las propiedades definidas en
     /// IDistanceResult esta clase agrega propiedades para acceder a las coordenadas de las direcciones buscadas.
     /// </summary>
     public class DistanceResult : IDistanceResult
@@ -109,4 +110,5 @@ namespace Ucu.Poo.Locations.Client
             }
         }
     }
+    */
 }

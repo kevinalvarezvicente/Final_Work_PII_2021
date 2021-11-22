@@ -3,7 +3,7 @@ using Telegram.Bot.Types;
 
 namespace PII_Proyecto_Final_TEMP.src.Library.Class.Commands
 {
-    class UsernameCommand : BaseCommand
+    public class UsernameCommand : BaseCommand
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="UsernameCommand"/>. Esta clase procesa el usuario y password ingresada por el usuario.
