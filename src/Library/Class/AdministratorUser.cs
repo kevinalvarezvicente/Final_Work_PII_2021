@@ -1,15 +1,15 @@
 namespace Library
 {
-    public class AdministratorUser : GUser
+    public class AdministratorUser : User
     {
-        public AdministratorUser(string idUser, string email, string nameUser, string phoneNumber, string password, string ubication, string nameCompany, string ocuppation)
-           : base(idUser, email, nameUser, phoneNumber, password, ubication)
+        public string NameCompany { get; private set; }
+        public string Ocuppation { get; private set; }
+        public AdministratorUser(string idUser, string email, string nameUser, string phoneNumber, string nameCompany, string ocuppation)
+           : base(idUser, email, nameUser, phoneNumber)
         {
             this.NameCompany = nameCompany;
             this.Ocuppation = ocuppation;
         }
 
-        public string NameCompany { get; private set; }
-        public string Ocuppation { get; private set; }
     }
 }

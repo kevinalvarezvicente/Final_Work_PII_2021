@@ -2,8 +2,12 @@ using Library;
 using System;
 using System.Linq;
 using Telegram.Bot.Types;
+<<<<<<< HEAD
+=======
 
-namespace PII_Proyecto_Final_TEMP.src.Library.Class
+namespace FINAL_WORK_PII_2021.src.Library.Class
+>>>>>>> 95ae3b34721569ef86861e5d69de46ea77e6167c
+
 {
     /// <summary>
     /// Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una
@@ -74,7 +78,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         /// un mensaje.
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
-        /// <returns>true si el mensaje puede ser pocesado; false en caso contrario.</returns>
+        /// <returns>true si el mensaje puede ser procesado; false en caso contrario.</returns>
         protected virtual bool CanHandle(Message message)
         {
             // Cuando no hay palabras clave este método debe ser sobreescrito por las clases sucesoras y por lo tanto

@@ -7,7 +7,8 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
     {
         /// <param name="ListToken">Lista de los tokens creados con su identificador.</param>
         private List<Token> ListToken = new List<Token>();
-
+        public int idToken { get; set; }
+        public string numberToken { get; set; }
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Token"/>.
         /// </summary>
@@ -16,9 +17,6 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
             numberToken = "";
         }
 
-        public int idToken { get; set; }
-
-        public string numberToken { get; set; }
 
         public Token createToken(int id)
         {
@@ -46,7 +44,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
             //</summary>
             //<param name = "Etoken"> String con el token cifrado </param>
             string Etoken = Convert.ToBase64String(GToE);
-            Console.WriteLine(Etoken);
+            //Console.WriteLine(Etoken);
             return Etoken;
         }
        

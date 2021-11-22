@@ -1,43 +1,53 @@
-# Qué hay configurado en esta plantilla
-//Cambiar 
-1. Un proyecto de biblioteca (creado con [`dotnet new classlib --name Library`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `src\Library`
-2. Un proyecto de aplicación de consola (creado con [`dotnet new console --name Program`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `src\Program`
-3. Un proyecto de prueba en [NUnit](https://nunit.org/) (creado con [`dotnet new nunit --name LibraryTests`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `test\LibraryTests`
-4. Un proyecto de [Doxygen](https://www.doxygen.nl/index.html) para generación de sitio web de documentación en la carpeta `docs`
-5. Análisis estático con [Roslyn analyzers](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview) en los proyectos de biblioteca y de aplicación
-6. Análisis de estilo con [StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/README.md) en los proyectos de biblioteca y de aplicación
-7. Una solución `ProjectTemplate.sln` que referencia todos los proyectos de C# y facilita la compilación con [`dotnet build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build).
-8. Tareas preconfiguradas para compilar y ejecutar los proyectos, ejecutar las pruebas, y generar documentación desde VSCode en la carpeta `.vscode`
-9. Análisis de cobertura de los casos de prueba mediante []() que aparece en los márgenes con el complemento de VS Code [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters).
-10. Ejecución automática de compilación y prueba mediante [GitHub Actions](https://docs.github.com/en/actions) configuradas en el repositorio al hacer [push](https://github.com/git-guides/git-push) o [pull request](https://docs.github.com/en/github/collaborating-with-pull-requests).
+# Universidad Católica del Uruguay
+<img src="https://ucu.edu.uy/sites/all/themes/univer/logo.png">
 
-Vean este 🎥 [video](https://web.microsoftstream.com/video/55c6a06c-07dc-4f95-a96d-768f198c9044) que explica el funcionamiento de la plantilla.
+## Facultad de Ingeniería y Tecnologías
+### Programación II
 
-## Convenciones
+## Proyecto 2021 - Segundo Semestre -
 
-[Convenciones de código en C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
+Nuestro plan de acción para la siguiente entrega es el siguiente:
 
-[Convenciones de nombres en C#](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines)
+> :thinking: Tenemos que cumplir con varios casos se uso y la implementación del chatbot en un tiempo corto por lo cual pensamos un plan de accion diferente para aumentar el rendimiento del equipo.
 
-## Dónde encontrar información sobre los errores/avisos al compilar
+## Nuestro plan
 
-[C# Compiler Errors (CS*)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/)
+Identificamos requisitos claves en el desarollo del proyecto y estos son los siguientes:
 
-[Roslyn Analyzer Warnings (CA*)](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/categories)
+**Kevin Alvarez** - Implementación del bot con telegram (ServerBot)
 
-[StyleCop Analyzer Warnings (SA*)](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md)
+**Kevin Alvarez** - Chat bot funcionando con el patrón de diseño chain of responsability (BaseCommand, ICommand, Command iniciales)
 
-# Cómo deshabilitar temporalmente los avisos al compilar
+## Casos de uso
+**Lucas Martino** - Como administrador, quiero poder invitar empresas a la plataforma, para que de esa forma puedan realizar ofertas de materiales reciclables o residuos. (Invitation, token)
 
-## Roslyn Analyzer
+**Lucas Martino** - Como empresa, quiero aceptar una invitación a unirme en la plataforma y registrar mi nombre, ubicación y rubro, para que de esa forma pueda comenzar a publicar ofertas. (User, AdministratorUser)
 
-Comentar las siguientes líneas en los archivos de proyecto (`*.csproj`)
-```
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-```
+**Lucas Martino** - Como empresa, quiero publicar una oferta de materiales reciclables o residuos, para que de esa forma los emprendedores que lo necesiten puedan reutilizarlos.(Publication, Recyclable (compartida), Residue (compartida) )
 
-## StyleCop Analyzer
+**Lucas Martino** - Como empresa, quiero clasificar los materiales o residuos, indicar su cantidad y unidad, el valor (en $ o U$S) de los mismos y el lugar donde se ubican, para que de esa forma los emprendedores tengan información de materiales o residuos disponibles. ( IMaterial (compartida), API Location, Location)
 
-Comentar la línea `<PackageReference Include="StyleCop.Analyzers" Version="1.1.118"/>` en los archivos de proyecto (`*.csproj`)
+- Como empresa, quiero indicar las habilitaciones que requiere un emprendedor, para que de esa forma pueda recibir o retirar los materiales o residuos.
+
+- Como empresa, quiero indicar un conjunto de palabras claves asociadas a la publicación de los materiales, para que de esa forma sea más fácil de encontrarlos en las búsquedas que hacen los emprendedores.
+
+**Lucas Martino** - Como emprendedor, quiero registrarme en la platarforma indicando nombre, ubicación, rubro, habilitaciones y especializaciones, para que de esa forma pueda ver las ofertas de materiales o residuos. (Entrepreneur, Entrepreneur_Qual)
+
+- Como emprendedor, quiero poder buscar materiales ofrecidos por empresas mediante palabras clave, categorías, o por zona, para de esa forma obtener insumos para mi emprendimiento.
+
+**Juan Campos** - Como emprendedor, quiero saber qué materiales se generan constantemente, para de esa forma planificar que insumos tengo disponibles. (Pensar como implementarlo)
+
+**Juan Campos** - Como emprendedor, quiero saber cuándo un material o residuo se genera puntualmente, para de esa forma determinar oportunidades de desarrollar nuevos productos. (Ideas para Juan: crear una clase Punctual_Generation que evalue estos casos cumpliendo los patrónes de diseño)
+
+**Juan Campos** - Como empresa, quiero saber todos los materiales o residuos entregados en un período de tiempo, para de esa forma tener un seguimiento de su reutilización. (Agremment, ListAgreement)
+
+**Juan Campos** - Como emprendedor, quiero saber cuántos materiales o residuos consumí en un período de tiempo, para de esa forma tener un control de mis insumos. (Agremment, ListAgreement)
+
+ 
+**Kevin Alvarez -  Persistencia de la información**
+Nuestro chatbot necesitará guardar la información de empresas, emprendedores, materiales, etc. Para esto utilizaremos una interface que permitirá realizar persistencia de datos (guardar y recuperar) y luego una implemnentación utilizando archivos. Al cambiar la implementación de la interface de la abse de datos, el chatbot debería seguir funcionando sin cambios.
+
+## Hitos
+Es de **obligatoriedad** el entregar los requisitos con el nombre del integrante del equipo para el **viernes 19 de noviembre 10:00pm** incluyendo los **test** de cada caso de uso / clase asignada. 
+
+Cabe destacar que en el caso de ser necesario se deberán de crear nuevas clases para que el caso de uso funcione de manera satisfactoria. Se pueden modificar la clase de otro integrante del equipo siempre y cuando sea para implementar la nueva funcionalidad. Cosa que no deberia de pasar si se cumpliera con los patrones de diseño correctamente en ese caso se le debe de notificar al compañero de que modifique su clase para que la cohesion sea mayor y el agrupamiento menor.

@@ -1,6 +1,6 @@
 using Telegram.Bot.Types;
 
-namespace PII_Proyecto_Final_TEMP.src.Library.Class
+namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
 {
     public class HelloCommand : BaseCommand
     {
@@ -23,7 +23,7 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         {
             if (message.Text.ToLower().Equals("hola"))
             {
-                response = "¡Hola! Bienvenido a nuestro chat bot \n /Login: Para loguearte \n /Invitation: Para registrarte";
+                response = "¡Hola! Bienvenido a nuestro chat bot \n /Login: Para loguearte \n /Invitation: Para registrarte \n /Publish: Para publicar";
 
                 return true;
             }
