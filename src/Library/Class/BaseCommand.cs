@@ -2,11 +2,8 @@ using Library;
 using System;
 using System.Linq;
 using Telegram.Bot.Types;
-<<<<<<< HEAD
-=======
 
 namespace FINAL_WORK_PII_2021.src.Library.Class
->>>>>>> 95ae3b34721569ef86861e5d69de46ea77e6167c
 
 {
     /// <summary>

@@ -3,50 +3,59 @@ using System.Collections.Generic;
 
 namespace PII_Proyecto_Final_TEMP.src.Library.Class
 {
-    public class Token
+        public class Token
     {
         /// <param name="ListToken">Lista de los tokens creados con su identificador.</param>
-        private List<Token> ListToken = new List<Token>();
+        private List<Token> listToken = new List<Token>();
         public int idToken { get; set; }
         public string numberToken { get; set; }
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Token"/>.
         /// </summary>
-        public Token() {
+        public Token()
+        {
             idToken = 0;
             numberToken = "";
         }
 
-
-        public Token createToken(int id)
+        /// <summary>
+        /// Instance an object of type Token.
+        /// </summary>
+        /// <returns>The token instantiated</returns>
+        public Token CreateToken(int id)
         {
-            Token token1 = new Token();
-            token1.idToken = id;
-            token1.numberToken = token1.generateToken();
-            this.ListToken.Add(token1);
-            return token1;
+            Token objectToken = new Token();
+            objectToken.idToken = id;
+            objectToken.numberToken = objectToken.GenerateCode();
+            this.listToken.Add(objectToken);
+            return objectToken;
         }
 
-
-        public string generateToken() {
+        /// <summary>
+        /// Generate the encrypt token.
+        /// </summary>
+        /// <returns>The encrypted token </returns>
+        public string GenerateCode()
+        {
             //<summary>
-            //Crea un objeto de tipo Guid
+            //Instance a guid object called gToken
             //</summary>
-            //<param name = "Gtoken"> Identificador único de 32 dígitos </param>
-            Guid Gtoken = Guid.NewGuid();
+            //<param name = "gToken"> Globally unique identifier of 16 digits </param>
+            Guid gToken = Guid.NewGuid();
             //<summary>
-            //Guarda los datos de la variable Gtoken en un array de bits
+            //Converts the variable of guid type to an array.
             //</summary
-            //<param name = "GToE"> Array de bits </param>
-            byte[] GToE = Gtoken.ToByteArray();
+            //<param name = "aToken"> A 16 element byte array </param>
+            byte[] aToken = gToken.ToByteArray();
             //<summary>
-            //Cifra el token y lo guarda en Etoken
+            //Encrypts te array of 16 elements to base 64
             //</summary>
-            //<param name = "Etoken"> String con el token cifrado </param>
-            string Etoken = Convert.ToBase64String(GToE);
-            //Console.WriteLine(Etoken);
-            return Etoken;
+            //<param name = "eToken"> Encrypted token to base 64</param>
+            string eToken = Convert.ToBase64String(aToken);
+            
+            return eToken;
         }
-       
+
     }
+}
 }

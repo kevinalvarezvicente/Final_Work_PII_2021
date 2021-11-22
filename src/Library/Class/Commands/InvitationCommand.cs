@@ -2,6 +2,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot;
 using System.Threading;
 using System.Threading.Tasks;
+using Library;
 
 
 namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
@@ -23,8 +24,11 @@ namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
                 return true;
                 // if(UsernameCommand usuPass [0] == admin)
                 //     {
-                //     response = "¿Qué empresa quieres invitar?";
-                //     return true;
+                //      response = "¿Qué empresa quieres invitar?";
+                //      Invitation invite = new Invitation();
+                //      invite.generateInvitation();
+
+                //      return true;
                 //     }
                 // else
                 //     {

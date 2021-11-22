@@ -2,29 +2,14 @@
 using FINAL_WORK_PII_2021.src.Library.Class.Commands;
 using Telegram.Bot.Types;
 using System;
-<<<<<<< HEAD
-using PII_Proyecto_Final_TEMP.src.Library.Class;
-using PII_Proyecto_Final_TEMP.src.Library.Class.Commands;
-=======
->>>>>>> 95ae3b34721569ef86861e5d69de46ea77e6167c
 
-namespace Library
+namespace Final_Work_PII_2021
 {
     class Program
     {
 
         public static void Main()
         {
-<<<<<<< HEAD
-            /*LocationApiClient client = null;*/
-            /*Invitation invit = new Invitation();
-            invit.generateInvitation();*/
-=======
-
-
-            // Invitation invit = new Invitation();
-            // invit.generateInvitation();
->>>>>>> 95ae3b34721569ef86861e5d69de46ea77e6167c
             ICommand commandICommand =
                 new HelloCommand(
                 new LoginCommand(
