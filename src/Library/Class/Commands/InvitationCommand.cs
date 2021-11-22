@@ -12,13 +12,13 @@ namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
         
         public InvitationCommand(BaseCommand next) : base(next)
         {
-            this.Keywords = new string[] { "/invitation" };
+            this.Keywords = new string[] { "/invitacion" };
         }
 
         
         protected override bool InternalHandle(Message message, out string response)
         {
-            if (message.Text.ToLower().Equals("/invitation"))
+            if (message.Text.ToLower().Equals("/invitacion"))
             {
                 response = "¿Qué empresa quieres invitar?";
                 return true;
@@ -34,7 +34,7 @@ namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
                 //     {
                 //         response = "¿Escribe el código de invitacion que te enviamos por correo";
                 //         return true;
-                //     }
+                //     
             }
 
             response = string.Empty;
