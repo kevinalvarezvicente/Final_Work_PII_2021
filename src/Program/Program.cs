@@ -12,16 +12,17 @@ namespace Final_Work_PII_2021
         {
 
 
-            /*Invitation invit = new Invitation();
-            invit.generateInvitation();*/
+            // Invitation invit = new Invitation();
+            // invit.generateInvitation();
             ICommand commandICommand =
                 new HelloCommand(
                 new LoginCommand(
                 new InvitationCommand(
+                new PublicationCommand(
                 new UsernameCommand(
                 new GoodByeCommand(null
                 
-            )))));
+            ))))));
             
             Message message = new Message();
             string response;
