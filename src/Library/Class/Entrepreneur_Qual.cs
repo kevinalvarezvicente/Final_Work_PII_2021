@@ -15,6 +15,9 @@ namespace Library
             this.regulatoryEntity = regulatoryEntity;
             this.expirationDate = expirationDate;
         }
+        public void GetQualification(){
+
+        }
 
     }
 }
