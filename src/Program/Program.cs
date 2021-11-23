@@ -11,7 +11,7 @@ namespace Final_Work_PII_2021
 
         public static void Main()
         {
-            LocationApiClient client = new LocationApiClient();
+            //LocationApiClient client = new LocationApiClient();
             ICommand commandICommand =
                 new HelloCommand(
                 new LoginCommand(
@@ -38,6 +38,7 @@ namespace Final_Work_PII_2021
                 }
 
                ICommand result = commandICommand.Handle(message, out response);
+
                 Console.WriteLine(result);
                 if (result == null)
                 {
