@@ -21,7 +21,7 @@ namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(Message message, out string response)
         {
-            if (message.Text.ToLower().Equals("hola"))
+            if (message.Text.ToLower().Trim().Equals("hola"))
             {
                 response = "¡Hola! Bienvenido a nuestro chat bot \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Publicar: Para publicar";
 

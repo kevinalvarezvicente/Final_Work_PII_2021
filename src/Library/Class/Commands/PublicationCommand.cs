@@ -1,5 +1,6 @@
 using Telegram.Bot.Types;
 using Library;
+using System;
 
 namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
 {
@@ -8,15 +9,16 @@ namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
       
         public PublicationCommand(BaseCommand next) : base(next)
         {
-            this.Keywords = new string[] { "/publish" };
+            this.Keywords = new string[] { "/publicar" };
         }
         protected override bool InternalHandle(Message message, out string response)
         {
-            if (message.Text.ToLower().Equals("/publish"))
+            if (message.Text.ToLower().Equals("/publicar"))
             {
-                response = "Qué te gustaria Publicar?";
-                // Publication publish = new Publication();
-                // publish.generatePublication();
+                //publish.GeneratePublication();
+                response = "publicar";
+
+
                 return true;
             }
 
