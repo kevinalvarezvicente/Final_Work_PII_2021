@@ -1,17 +1,18 @@
-﻿using Library;
-using FINAL_WORK_PII_2021.src.Library.Class.Commands;
-using Telegram.Bot.Types;
+﻿using Telegram.Bot.Types;
 using System;
 using Ucu.Poo.Locations.Client;
+using src.Library.Class;
 
-namespace Final_Work_PII_2021
+namespace src.Program
 {
     class Program
     {
 
         public static void Main()
         {
-            LocationApiClient client = new LocationApiClient();
+            ServerBot bot = new ServerBot(); 
+            bot.startEngines();
+            /*LocationApiClient client = new LocationApiClient();
             ICommand commandICommand =
                 new HelloCommand(
                 new LoginCommand(
@@ -49,7 +50,7 @@ namespace Final_Work_PII_2021
                     Console.WriteLine(response);
                     Console.Write("> ");
                 }
-            }
+            }*/
         }
     }
 }

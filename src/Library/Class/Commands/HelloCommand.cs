@@ -1,29 +1,30 @@
 using Telegram.Bot.Types;
 
-namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
+namespace src.Library.Class.Commands
 {
-    public class LoginCommand : BaseCommand
+    public class HelloCommand : BaseCommand
     {
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="LoginCommand"/>. Esta clase procesa el mensaje "/login".
+        /// Inicializa una nueva instancia de la clase <see cref="HelloCommand"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "command".</param>
-        public LoginCommand(BaseCommand next) : base(next)
+        public HelloCommand(BaseCommand next) : base(next)
         {
-            this.Keywords = new string[] { "/login" };
+            this.Keywords = new string[] { "hola" };
         }
 
         /// <summary>
-        /// Procesa el mensaje "/login" y retorna true; retorna false en caso contrario.
+        /// Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="response">La respuesta al mensaje procesado.</param>
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(Message message, out string response)
         {
-            if (message.Text.ToLower().Equals("/login"))
+            if (message.Text.ToLower().Equals("hola"))
             {
-                response = "Veo que no estas logueado :( , pero no te preocupes. \n Digita tu usuario y contraseña de la siguiente manera ´usuario,contraseña´ ";
+                response = "¡Hola! Bienvenido a nuestro chat bot \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Publicar: Para publicar";
+
                 return true;
             }
 
