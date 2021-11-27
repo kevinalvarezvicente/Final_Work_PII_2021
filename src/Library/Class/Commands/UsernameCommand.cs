@@ -1,7 +1,7 @@
 using System;
 using Telegram.Bot.Types;
 
-namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
+namespace src.Library.Class.Commands
 {
     public class UsernameCommand : BaseCommand
     {

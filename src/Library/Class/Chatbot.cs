@@ -2,22 +2,22 @@ using Telegram.Bot;
 using Telegram.Bot.Types;
 using UserTelgram = Telegram.Bot.Types.User;
 
-namespace Library
+namespace src.Library.Class
 {
     /// <summary>
     /// Clase realizada con el patrón singleton
     /// Se crea una unica instancia de esta clase y en cuyo caso de que se quiera crear otro devuelve al anterior.
     /// </summary>
-    public class TelegramBot
+    public class Chatbot
     {
 
         /// <value>Guarda el identificador unico del bot de Telegram.</value>
-        private const string TELEGRAM_BOT_TOKEN = "2085142257:AAGK0NCrRqZDJ4yfX1P_hH5CGp1dzBupn3Y";
+        private const string TELEGRAM_BOT_TOKEN = "2085142257:AAFp8KJ9u_GDXbKIZMhbiM_CIdyQRmhCD4Q";
 
-        private static TelegramBot instance;
+        private static Chatbot instance;
         private ITelegramBotClient bot;
 
-        private TelegramBot()
+        private Chatbot()
         {
             this.bot = new TelegramBotClient(TELEGRAM_BOT_TOKEN);
         }
@@ -54,13 +54,13 @@ namespace Library
             }
         }
 
-        public static TelegramBot Instance
+        public static Chatbot Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new TelegramBot();
+                    instance = new Chatbot();
                 }
                 return instance;
             }

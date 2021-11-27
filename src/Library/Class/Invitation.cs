@@ -22,7 +22,7 @@ namespace Library
         public bool generateInvitation(string guestNameSend, string AdminNameSend)
         {
             Token classToken = new Token();
-            classToken = classToken.createToken(1);
+            classToken = classToken.CreateToken(1);
             Invitation invitation = new Invitation(classToken, guestNameSend, AdminNameSend);
             return true;
         }
