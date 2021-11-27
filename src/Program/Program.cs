@@ -17,10 +17,11 @@ namespace Final_Work_PII_2021
                 new LoginCommand(
                 new InvitationCommand(
                 new PublicationCommand(
+                new MaterialCommand(
                 new UsernameCommand(
                 new GoodByeCommand(null
                 
-            ))))));
+            )))))));
             
             Message message = new Message();
             string response;

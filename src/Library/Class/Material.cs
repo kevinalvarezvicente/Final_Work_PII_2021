@@ -16,8 +16,6 @@ namespace Library
             this.cost = cost;
         }
 
-        void getLocation(){
-            
-        }
+        void getLocation(){}
     }
 }
