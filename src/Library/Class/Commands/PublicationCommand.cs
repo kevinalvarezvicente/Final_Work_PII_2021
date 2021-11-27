@@ -25,6 +25,7 @@ namespace src.Library.Class.Commands
                 {
                     this.publicationActive = false;
                 }
+
                 return true;
             }
             else

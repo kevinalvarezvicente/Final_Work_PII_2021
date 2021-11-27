@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Library
 {
-    public class Publication
+    public class Publication : IJsonConvertible
     {
+        [JsonConstructor]
+        public Publication()
+        {}
         public List<Publication> ListPublications = new List<Publication>();
         public int IdPublication { get; set; }
 
@@ -22,11 +27,22 @@ namespace Library
             this.Company = company;
             this.PublicationDate = publicationDate;
         }
-
-        public bool generatePublication(int idPublication, Material material, Company company, DateTime publicationDate) {
+        public bool GeneratePublication(int idPublication, Material material, Company company, DateTime publicationDate) {
             Publication publication = new Publication(idPublication, material, company, publicationDate);
+            
+            
             this.ListPublications.Add(publication);
             return true;
+        }
+        public string ConvertToJson()
+        {
+            JsonSerializerOptions options = new()
+            {
+                ReferenceHandler = MyReferenceHandler.Instance,
+                WriteIndented = true
+            };
+
+            return JsonSerializer.Serialize(this, options);
         }
     }
 }

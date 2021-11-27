@@ -39,6 +39,7 @@ namespace src.Program
                 }
 
                ICommand result = commandICommand.Handle(message, out response);
+
                 Console.WriteLine(result);
                 if (result == null)
                 {
