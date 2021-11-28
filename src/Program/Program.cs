@@ -18,10 +18,11 @@ namespace src.Program
                 new LoginCommand(
                 new InvitationCommand(
                 new PublicationCommand(
+                new MaterialCommand(
                 new UsernameCommand(
                 new GoodByeCommand(null
                 
-            ))))));
+            )))))));
             
             Message message = new Message();
             string response;
