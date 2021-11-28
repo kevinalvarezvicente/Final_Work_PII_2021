@@ -1,6 +1,6 @@
 using Telegram.Bot.Types;
 
-namespace Library
+namespace src.Library.Class
 {
     public interface ICommand
     {

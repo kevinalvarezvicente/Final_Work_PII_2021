@@ -1,8 +1,9 @@
 using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
+using src.Library;
 
-namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
+namespace src.Library.Class.Commands
 
 {
     public class GoodByeCommand : BaseCommand

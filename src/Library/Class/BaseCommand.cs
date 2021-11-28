@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using Telegram.Bot.Types;
 
-namespace FINAL_WORK_PII_2021.src.Library.Class
+namespace src.Library.Class
 
 {
     /// <summary>

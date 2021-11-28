@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Library;
 
 
-namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
+namespace src.Library.Class.Commands
 {
     public class InvitationCommand : BaseCommand
     {
@@ -20,21 +20,21 @@ namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
         {
             if (message.Text.ToLower().Equals("/invitacion"))
             {
-                // response = "¿Qué empresa quieres invitar?";
-                // return true;
-                if(message.Text.Equals("/admin-49281514"))
-                    {
-                     response = "¿Qué empresa quieres invitar?";
-                    //  Invitation invite = new Invitation();
-                    //  invite.generateInvitation();
+                response = "¿Qué empresa quieres invitar?";
+                return true;
+                // if(UsernameCommand usuPass [0] == admin)
+                //     {
+                //      response = "¿Qué empresa quieres invitar?";
+                //      Invitation invite = new Invitation();
+                //      invite.generateInvitation();
 
-                     return true;
-                    }
-                else
-                    {
-                        response = "Escribe el código de invitacion que te enviamos por correo";
-                        return true;
-                    }
+                //      return true;
+                //     }
+                // else
+                //     {
+                //         response = "¿Escribe el código de invitacion que te enviamos por correo";
+                //         return true;
+                //     
             }
 
             response = string.Empty;
