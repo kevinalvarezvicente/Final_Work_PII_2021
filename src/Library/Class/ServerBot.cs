@@ -30,7 +30,7 @@ namespace src.Library.Class
 
 
             Console.WriteLine("Presiona una tecla para terminar");
-            //Console.ReadKey();
+            Console.ReadKey();
 
             //Detengo la escucha de mensajes 
             bot.StopReceiving();
@@ -47,7 +47,7 @@ namespace src.Library.Class
                 Console.WriteLine($"{chatInfo.FirstName}: envío {message.Text}");
 
                 /*------------------------------------------------------------------*/
-                ICommand commandICommand =
+            ICommand commandICommand =
                 new HelloCommand(
                 new UsernameCommand(
                 new LoginCommand(

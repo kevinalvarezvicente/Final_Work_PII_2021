@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace Library
+namespace src.Library.Class.Persistence.DataBase_Logic
 {
     /// <summary>
     /// Define el tipo que tienen los objetos que pueden ser serializados en y deserializados desde texto en formato

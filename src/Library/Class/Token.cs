@@ -1,20 +1,18 @@
 using System;
 using System.Collections.Generic;
 
-namespace PII_Proyecto_Final_TEMP.src.Library.Class
+namespace src.Library.Class
 {
-        public class Token
+    public class Token
     {
         /// <param name="ListToken">Lista de los tokens creados con su identificador.</param>
-        private List<Token> listToken = new List<Token>();
-        public int idToken { get; set; }
+        //private List<Token> listToken = new List<Token>();
         public string numberToken { get; set; }
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Token"/>.
         /// </summary>
         public Token()
         {
-            idToken = 0;
             numberToken = "";
         }
 
@@ -22,13 +20,9 @@ namespace PII_Proyecto_Final_TEMP.src.Library.Class
         /// Instance an object of type Token.
         /// </summary>
         /// <returns>The token instantiated</returns>
-        public Token CreateToken(int id)
+        public void CreateToken()
         {
-            Token objectToken = new Token();
-            objectToken.idToken = id;
-            objectToken.numberToken = objectToken.GenerateCode();
-            this.listToken.Add(objectToken);
-            return objectToken;
+            this.numberToken = this.GenerateCode();
         }
 
         /// <summary>
