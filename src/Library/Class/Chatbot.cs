@@ -12,7 +12,7 @@ namespace src.Library.Class
     {
 
         /// <value>Guarda el identificador unico del bot de Telegram.</value>
-        private const string TELEGRAM_BOT_TOKEN = "2085142257:AAFp8KJ9u_GDXbKIZMhbiM_CIdyQRmhCD4Q";
+        private const string TELEGRAM_BOT_TOKEN = "1979783244:AAHxt8x8kMVl5RNWCnfy9iRGvLaI9DW4tvU";
 
         private static Chatbot instance;
         private ITelegramBotClient bot;

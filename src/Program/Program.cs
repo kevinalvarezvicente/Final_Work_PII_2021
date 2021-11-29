@@ -2,6 +2,7 @@
 using System;
 using Ucu.Poo.Locations.Client;
 using src.Library.Class;
+using src.Library.Class.Commands;
 
 namespace src.Program
 {
@@ -12,16 +13,15 @@ namespace src.Program
         {
             ServerBot bot = new ServerBot(); 
             bot.startEngines();
-            /*LocationApiClient client = new LocationApiClient();
+            /*LocationApiClient client = new LocationApiClient();*/
             ICommand commandICommand =
                 new HelloCommand(
+                new UsernameCommand(
                 new LoginCommand(
                 new InvitationCommand(
                 new PublicationCommand(
                 new MaterialCommand(
-                new UsernameCommand(
                 new GoodByeCommand(null
-                
             )))))));
             
             Message message = new Message();
@@ -52,7 +52,7 @@ namespace src.Program
                     Console.WriteLine(response);
                     Console.Write("> ");
                 }
-            }*/
+            }
         }
     }
 }

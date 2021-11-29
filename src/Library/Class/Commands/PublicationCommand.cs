@@ -31,7 +31,6 @@ namespace src.Library.Class.Commands
             {
                 if (message.Text.ToLower().Equals("/publicar"))
                 {
-                    //publish.GeneratePublication();
                     response = "Nombre de la publicacion?";
 
                     this.publicationActive = true;

@@ -23,7 +23,7 @@ namespace src.Library.Class.Commands
         {
             if (message.Text.ToLower().Trim().Equals("hola"))
             {
-                response = "¡Hola! Bienvenido a nuestro chat bot \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Publicar: Para publicar";
+                response = "¡Hola! Bienvenido a nuestro chat bot \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Material: Para crear un material \n /Publicar: Para publicar un material";
 
                 return true;
             }
