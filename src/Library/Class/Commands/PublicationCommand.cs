@@ -25,14 +25,12 @@ namespace src.Library.Class.Commands
                 {
                     this.publicationActive = false;
                 }
-
                 return true;
             }
             else
             {
                 if (message.Text.ToLower().Equals("/publicar"))
                 {
-                    //publish.GeneratePublication();
                     response = "Nombre de la publicacion?";
 
                     this.publicationActive = true;
