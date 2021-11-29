@@ -2,6 +2,7 @@ using System.Windows.Input;
 using NUnit.Framework;
 using Ucu.Poo.TelegramBot;
 using Telegram.Bot.Types;
+using src.Library.Class.Commands;
 
 namespace ProgramTests
 {
