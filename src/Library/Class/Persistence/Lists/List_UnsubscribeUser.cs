@@ -5,22 +5,25 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Linq;
 using src.Library.Class.Persistence.DataBase_Logic;
-using src.Library.Class.Persistence.Save;
+
 namespace src.Library.Class.Persistence.Lists
 {
-    public class List_UnsubscribeUser: IJsonConvertible{
-        public List<NonActiveUser> nonActiveUser = new List<NonActiveUser>();
+    public class List_UnsubscribeUser: IJsonConvertible
+    {
+        [JsonInclude]
+        public List<NotSubscribeUser> ListNotSubscribeUser = new List<NotSubscribeUser>();
  
         private static List_UnsubscribeUser instance;
 
-        private List_UnsubscribeUser()
+        [JsonConstructor]
+        public List_UnsubscribeUser()
         {
             Initialize();
         }
 
         public void Initialize()
         {
-            this.nonActiveUser = new List<NonActiveUser>();
+            this.ListNotSubscribeUser = new List<NotSubscribeUser>();
         }
 
         public static List_UnsubscribeUser Instance
@@ -35,27 +38,31 @@ namespace src.Library.Class.Persistence.Lists
             }
         }
 
-        public void Add(NonActiveUser user)
+        public void Add(NotSubscribeUser user)
         {
-            this.nonActiveUser.Add(user);
-            Save_UnsubscribeUser Class_Save_UnsubscribeUser = new Save_UnsubscribeUser();
-            Class_Save_UnsubscribeUser.save(this.nonActiveUser);
+            this.ListNotSubscribeUser.Add(user);
+            this.save();
         }
 
-        public void Remove(NonActiveUser user)
+        public void Remove(NotSubscribeUser user)
         {
-            this.nonActiveUser.Remove(user);
+            this.ListNotSubscribeUser.Remove(user);
         }
 
-        public string ConvertToJson()
-        {
-            JsonSerializerOptions options = new()
+        private static JsonSerializerOptions options = new()
             {
                 ReferenceHandler = MyReferenceHandler.Instance,
                 WriteIndented = true
             };
 
-            return JsonSerializer.Serialize(this, options);
+        public string ConvertToJson()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+
+        public void save(){
+            string json = this.ConvertToJson();
+            System.IO.File.WriteAllText(@"../Library/Class/Persistence/Data/Entidades/unsubscribeActiveUser.json", json);
         }
 
     }

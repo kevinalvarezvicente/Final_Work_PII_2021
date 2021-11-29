@@ -26,14 +26,13 @@ namespace src.Library.Class.Commands
             Chat chatInfo = message.Chat;
             if (message.Text.ToLower().Trim().Equals("hola"))
             {
-                response = "¡Hola 👋! Me llamo Arthur 🧑‍💼. Que bueno que me hayas elegido para ser tu amigobot "+chatInfo.FirstName+" 💪, te ayudaré en lo que necesites desde ahora en más. \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Material: Para crear un material \n /Publicar: Para publicar un material";
+                response = "¡Hola "+chatInfo.FirstName+" 👋! Me llamo Arthur 🧑‍💼. Que bueno que me hayas elegido para ser tu amigobot 💪, te ayudaré en lo que necesites desde ahora en más. \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Material: Para crear un material \n /Publicar: Para publicar un material";
 
-                NonActiveUser nonActiveUser = new NonActiveUser(0,"Telegram",chatInfo.Id.ToString());
-                List_UnsubscribeUser.Instance.Add(nonActiveUser);
+                NotSubscribeUser notSubscribeUser = new NotSubscribeUser(0,"Telegram",chatInfo.Id.ToString());
+                List_UnsubscribeUser.Instance.Add(notSubscribeUser);
 
                 return true;
             }
-
             response = string.Empty;
             return false;
         }
