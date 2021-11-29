@@ -2,7 +2,7 @@ using Telegram.Bot.Types;
 using Library;
 using System;
 
-namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
+namespace src.Library.Class.Commands
 {
     public class MaterialCommand : BaseCommand
     {
@@ -15,7 +15,7 @@ namespace FINAL_WORK_PII_2021.src.Library.Class.Commands
         {
             if (message.Text.ToLower().Equals("/material"))
             {
-                response = "material";
+                response = "Que residuo quieres crear?";
                 return true;
             }
 

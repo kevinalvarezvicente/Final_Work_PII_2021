@@ -1,40 +1,41 @@
+using System.Windows.Input;
 using NUnit.Framework;
 using Ucu.Poo.TelegramBot;
 using Telegram.Bot.Types;
 
 namespace ProgramTests
 {
-    public class HelloCommandTests
+    public class PublicationCommandTests
     {
-        HelloHandler handler;
+        PublicationCommand command;
         Message message;
 
         [SetUp]
         public void Setup()
         {
-            handler = new HelloHandler(null);
+            command = new PublicationCommand(null);
             message = new Message();
         }
 
         [Test]
-        public void TestHandle()
+        public void TestCommand()
         {
-            message.Text = handler.Keywords[0];
+            message.Text = command.Keywords[0];
             string response;
 
-            IHandler result = handler.Handle(message, out response);
+            ICommand result = command.Command(message, out response);
 
             Assert.That(result, Is.Not.Null);
-            Assert.That(response, Is.EqualTo("¡Hola! ¿Cómo estás?"));
+            Assert.That(response, Is.EqualTo("Nombre de la publicacion?"));
         }
 
         [Test]
         public void TestDoesNotHandle()
         {
-            message.Text = "adios";
+            message.Text = "publicar";
             string response;
 
-            IHandler result = handler.Handle(message, out response);
+            ICommand result = command.Command(message, out response);
 
             Assert.That(result, Is.Null);
             Assert.That(response, Is.Empty);
