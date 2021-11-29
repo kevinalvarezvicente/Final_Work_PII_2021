@@ -21,9 +21,10 @@ namespace src.Library.Class.Commands
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(Message message, out string response)
         {
+            Chat chatInfo = message.Chat;
             if (message.Text.ToLower().Trim().Equals("hola"))
             {
-                response = "¡Hola! Bienvenido a nuestro chat bot \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Material: Para crear un material \n /Publicar: Para publicar un material";
+                response = "¡Hola 👋! Me llamo Arthur 🧑‍💼. Que bueno que me hayas elegido para ser tu amigobot  💪, te ayudaré en lo que necesites desde ahora en más. \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Material: Para crear un material \n /Publicar: Para publicar un material";
 
                 return true;
             }
