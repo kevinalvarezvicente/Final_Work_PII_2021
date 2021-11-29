@@ -23,7 +23,7 @@ namespace ProgramTests
             message.Text = command.Keywords[0];
             string response;
 
-            ICommand result = command.Command(message, out response);
+            ICommand result = command.Handle(message, out response);
 
             Assert.That(result, Is.Not.Null);
             Assert.That(response, Is.EqualTo("Nombre de la publicacion?"));
@@ -35,7 +35,7 @@ namespace ProgramTests
             message.Text = "publicar";
             string response;
 
-            ICommand result = command.Command(message, out response);
+            ICommand result = command.Handle(message, out response);
 
             Assert.That(result, Is.Null);
             Assert.That(response, Is.Empty);

@@ -15,7 +15,7 @@ namespace src.Library.Class.Commands
         {
             if (message.Text.ToLower().Equals("/material"))
             {
-                response = "Que residuo quieres crear?";
+                response = "Que material quieres crear?";
                 return true;
             }
 
