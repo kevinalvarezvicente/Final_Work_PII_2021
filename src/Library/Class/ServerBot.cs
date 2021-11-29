@@ -30,7 +30,7 @@ namespace src.Library.Class
 
 
             Console.WriteLine("Presiona una tecla para terminar");
-            Console.ReadKey();
+            //Console.ReadKey();
 
             //Detengo la escucha de mensajes 
             bot.StopReceiving();
@@ -48,14 +48,15 @@ namespace src.Library.Class
 
                 /*------------------------------------------------------------------*/
                 ICommand commandICommand =
-                    new HelloCommand(
-                    new LoginCommand(
-                    new InvitationCommand(
-                    new PublicationCommand(
-                    new UsernameCommand(
-                    new GoodByeCommand(null
-                    
-                ))))));
+                new HelloCommand(
+                new UsernameCommand(
+                new LoginCommand(
+                new InvitationCommand(
+                new PublicationCommand(
+                new MaterialCommand(
+                new GoodByeCommand(null
+            )))))));
+            
 
                 string response;
 
