@@ -9,6 +9,7 @@ using System.Text;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Telegram.Bot.Extensions.Polling;
 
 namespace src.Library.Class
 {
@@ -30,7 +31,7 @@ namespace src.Library.Class
 
 
             Console.WriteLine("Presiona una tecla para terminar");
-            //Console.ReadKey();
+            Console.ReadKey();
 
             //Detengo la escucha de mensajes 
             bot.StopReceiving();
@@ -49,12 +50,12 @@ namespace src.Library.Class
                 /*------------------------------------------------------------------*/
                 ICommand commandICommand =
                 new HelloCommand(
+                new GoodByeCommand(
                 new UsernameCommand(
                 new LoginCommand(
-                new InvitationCommand(
-                new PublicationCommand(
                 new MaterialCommand(
-                new GoodByeCommand(null
+                new InvitationCommand(
+                new PublicationCommand(null
             )))))));
             
 

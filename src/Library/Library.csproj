@@ -4,6 +4,7 @@
   </PropertyGroup>
     <ItemGroup>
     <PackageReference Include="Telegram.Bot" Version="16.0.2" />
+    <PackageReference Include="Telegram.Bot.Extensions.Polling" Version="0.1.3" />
     <PackageReference Include="Nito.AsyncEx" Version="5.1.2"/>
   </ItemGroup>
 </Project>

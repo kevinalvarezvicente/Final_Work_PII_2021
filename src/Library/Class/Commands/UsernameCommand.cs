@@ -22,18 +22,19 @@ namespace src.Library.Class.Commands
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(Message message, out string response)
         {
-            String SMessage = message.Text.ToString();
-            if (SMessage.Contains("/register")) { 
-                string[] usuPass= SMessage.Split(',');
-                response = "Tu usuario es: " + usuPass[0] + " y tu contraseña es : " + usuPass[1];
-                return true;
-            } 
-            else 
+            // if (message.Text.ToLower().Equals("/admin-46587618"))
+            // {
+            //     response = "¿Qué empresa quieres invitar?";
+            //     return true;
+            // }
+            if (message.Text.ToLower().Equals("/register"))
             {
-                response = "Datos erroneos";
-                return false;
+                response = "prueba";
+                return true;
             }
-            
+
+            response = string.Empty;
+            return false;
         }
     }
 }
