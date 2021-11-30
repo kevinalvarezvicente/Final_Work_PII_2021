@@ -18,19 +18,5 @@ namespace src.Library.Class.Logic_Bot
             ))))));
         }
 
-        public void commandForAdminUser(){
-            commandICommand =
-                new HelloCommand(
-                new InvitationCommand(
-                new InvitationCommandStep1(
-                new PublicationCommand(
-                new MaterialCommand(
-                new GoodByeCommand(null
-            ))))));
-        }
-
-        public Initialize_CommandList(){
-            this.CommandICommand = commandICommand;
-        }
     }
 }
