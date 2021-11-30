@@ -5,11 +5,9 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Linq;
 using src.Library.Class.Persistence.DataBase_Logic;
-
 namespace src.Library.Class.Persistence.Lists
 {
-    public class List_UnsubscribeUser: IJsonConvertible
-    {
+    public class List_UnsubscribeUser{
         [JsonInclude]
         public List<NotSubscribeUser> ListNotSubscribeUser = new List<NotSubscribeUser>();
  
@@ -64,6 +62,5 @@ namespace src.Library.Class.Persistence.Lists
             string json = this.ConvertToJson();
             System.IO.File.WriteAllText(@"../Library/Class/Persistence/Data/Entidades/unsubscribeActiveUser.json", json);
         }
-
     }
 }

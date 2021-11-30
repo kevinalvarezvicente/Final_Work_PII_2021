@@ -27,4 +27,5 @@ namespace src.Library.Class
         /// </summary>
         void Cancel();
     }
+
 }

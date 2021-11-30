@@ -15,6 +15,7 @@ namespace src.Library.Class
     /// </summary>
     public abstract class BaseCommand : ICommand
     {
+        public ICommand commandICommand;
         /// <summary>
         /// Obtiene el próximo "command".
         /// </summary>
@@ -123,6 +124,7 @@ namespace src.Library.Class
                 this.Next.Cancel();
             }
         }
+
     }
 }
 
