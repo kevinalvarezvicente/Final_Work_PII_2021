@@ -16,11 +16,6 @@ namespace src.Library.Class.Logic_Bot
             this.Client = client;
         }
 
-        public static void onListening(){
-            /*Message message = messageEventArgs.Message
-            return MessageReceived;*/
-        }
-
         public static async void OnMessage(object sender, MessageEventArgs messageEventArgs)
         {
             /// <summary>

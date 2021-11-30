@@ -22,7 +22,7 @@ namespace src.Library.Class.Commands.StepsInvitation
             Chat chatInfo = message.Chat;
             string answer = message.Text.ToString();
 
-            Invitation invit = List_Invitation.Instance.findInvitation(answer);
+            /*Invitation invit = List_Invitation.Instance.findInvitation(answer);*/
 
             response = "Estoy validando tu invitación " + chatInfo.FirstName;
             

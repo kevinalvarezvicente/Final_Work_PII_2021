@@ -5,18 +5,20 @@ namespace src.Library.Class.Logic_Bot
 {
     public class Initialize_CommandList
     {
-        public static ICommand commandICommand;
 
-        public void commandForNormalUser(){
-            commandICommand =
+        public ICommand CommandICommand { get; set; }
+
+        public ICommand commandICommand =
                 new HelloCommand(
                 new InvitationCommand(
                 new InvitationCommandStep1(
                 new PublicationCommand(
                 new MaterialCommand(
                 new GoodByeCommand(null
-            ))))));
-        }
+        ))))));
 
+        public Initialize_CommandList(){
+            this.CommandICommand = commandICommand;
+        }
     }
 }
