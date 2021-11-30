@@ -5,7 +5,7 @@ namespace src.Library.Class.LoadList
     public class LoadList{
         public void LoadAllLists(){
             List_UnsubscribeUser.Instance.LoadList();
-            List_Invitation.Instance.LoadList();
+            /*List_Invitation.Instance.LoadList();*/
         }
     }
 }
