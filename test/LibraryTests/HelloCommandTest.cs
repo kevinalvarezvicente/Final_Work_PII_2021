@@ -1,28 +1,29 @@
+using System.Windows.Input;
 using NUnit.Framework;
 using Ucu.Poo.TelegramBot;
-using Telegram.Bot.Types;
+using src.Library.Class.Commands;
 
 namespace ProgramTests
 {
     public class HelloCommandTests
     {
-        HelloHandler handler;
+        HelloCommand command;
         Message message;
 
         [SetUp]
         public void Setup()
         {
-            handler = new HelloHandler(null);
+            command = new HelloCommand(null);
             message = new Message();
         }
 
         [Test]
         public void TestHandle()
         {
-            message.Text = handler.Keywords[0];
+            message.Text = command.Keywords[0];
             string response;
 
-            IHandler result = handler.Handle(message, out response);
+            ICommand result = command.Handle(message, out response);
 
             Assert.That(result, Is.Not.Null);
             Assert.That(response, Is.EqualTo("¡Hola! ¿Cómo estás?"));
@@ -34,7 +35,7 @@ namespace ProgramTests
             message.Text = "adios";
             string response;
 
-            IHandler result = handler.Handle(message, out response);
+            ICommand result = command.Handle(message, out response);
 
             Assert.That(result, Is.Null);
             Assert.That(response, Is.Empty);

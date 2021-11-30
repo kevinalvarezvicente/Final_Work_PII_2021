@@ -1,6 +1,6 @@
 using Library;
 using NUnit.Framework;
-using Final_Work_PII_2021.src.Library.Class;
+using src.Library.Class;
 
 namespace Tests
 {
