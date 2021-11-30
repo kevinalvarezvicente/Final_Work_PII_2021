@@ -3,7 +3,7 @@ using Telegram.Bot;
 using System.Threading;
 using System.Threading.Tasks;
 using Library;
-
+using src.Library.Class.Logic_Bot;
 
 namespace src.Library.Class.Commands
 {
@@ -12,29 +12,16 @@ namespace src.Library.Class.Commands
         
         public InvitationCommand(BaseCommand next) : base(next)
         {
-            this.Keywords = new string[] { "/invitacion" };
+            this.Keywords = new string[] { "/registrame" };
         }
 
         
         protected override bool InternalHandle(Message message, out string response)
         {
-            if (message.Text.ToLower().Equals("/invitacion"))
+            if (message.Text.ToLower().Equals("/registrame"))
             {
-                response = "¿Qué empresa quieres invitar?";
-                return true;
-                // if(UsernameCommand usuPass [0] == admin)
-                //     {
-                //      response = "¿Qué empresa quieres invitar?";
-                //      Invitation invite = new Invitation();
-                //      invite.generateInvitation();
-
-                //      return true;
-                //     }
-                // else
-                //     {
-                //         response = "¿Escribe el código de invitacion que te enviamos por correo";
-                //         return true;
-                //     
+                response = "Para continuar necesito que me pases el token de invitación. Este token te lo debió de pasar uno de mis creadores por otro medio.";
+                return true;     
             }
 
             response = string.Empty;
