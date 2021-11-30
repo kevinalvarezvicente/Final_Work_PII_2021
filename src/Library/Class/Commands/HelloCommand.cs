@@ -42,6 +42,7 @@ namespace src.Library.Class.Commands
                 /// We create the object notSubscribeUser here according to the creator Pattern because this class is an expert of this type of objects.
                 /// </summary>
                 /// <returns></returns>
+                /// 
                 NotSubscribeUser notSubscribeUser = new NotSubscribeUser(List_UnsubscribeUser.LastId(),"Telegram",chatInfo.Id.ToString());
                 List_UnsubscribeUser.Instance.Add(notSubscribeUser);
 

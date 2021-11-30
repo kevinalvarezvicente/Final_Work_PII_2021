@@ -41,8 +41,11 @@ namespace src.Library.Class.Persistence.Lists
 
         public void Add(NotSubscribeUser user)
         {
-            ListNotSubscribeUser.Add(user);
-            this.save();
+            bool find = findToken(user.Token);
+            if(find == false){
+                ListNotSubscribeUser.Add(user);
+                this.save();
+            }
         }
 
         public void Remove(NotSubscribeUser user)
@@ -68,16 +71,38 @@ namespace src.Library.Class.Persistence.Lists
 
         public List<NotSubscribeUser> Deserialize(){
             
-            //La linea de abajo no devuelve al txt es solo el url
             string jsonString = System.IO.File.ReadAllText(@"../Library/Class/Persistence/Data/Entidades/unsubscribeActiveUser.json");
             ListNotSubscribeUser = System.Text.Json.JsonSerializer.Deserialize<List<NotSubscribeUser>>(jsonString, options);
 
             return ListNotSubscribeUser;
         }
 
+        public void LoadList(){
+
+            string jsonString = System.IO.File.ReadAllText(@"../Library/Class/Persistence/Data/Entidades/unsubscribeActiveUser.json");
+            if(jsonString != ""){
+                ListNotSubscribeUser = System.Text.Json.JsonSerializer.Deserialize<List<NotSubscribeUser>>(jsonString, options);
+            }
+        }
+
         public static int LastId(){
-            int userId = ListNotSubscribeUser.Last().IdUser + 1;
-            return userId;
+            string jsonString = System.IO.File.ReadAllText(@"../Library/Class/Persistence/Data/Entidades/unsubscribeActiveUser.json");
+            if (jsonString != ""){
+                int userId = ListNotSubscribeUser.Last().IdUser + 1;
+                return userId;
+            }else{
+                return 0;
+            }
+            
+        }
+
+        public static bool findToken(string token){
+            NotSubscribeUser user = ListNotSubscribeUser.Find(x => (x.Token == token));
+            if (user != null){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
 }
