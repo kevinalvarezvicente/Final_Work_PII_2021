@@ -37,7 +37,8 @@ namespace src.Library.Class.Commands
             Chat chatInfo = message.Chat;
             if (message.Text.ToLower().Trim().Equals("hola"))
             {
-                response = "¡Hola "+chatInfo.FirstName+" 👋! Me llamo Arthur 🧑‍💼. Que bueno que me hayas elegido para ser tu amigobot 💪, te ayudaré en lo que necesites desde ahora en más. \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Material: Para crear un material \n /Publicar: Para publicar un material";
+                string notRegistred = "Para poder seguirte ayudando debes de registrarte.\n Digita '/Registrame' : Para registrarse.";
+                response = "¡Hola "+chatInfo.FirstName+" 👋! Me llamo Arthur 🧑‍💼. Que bueno que me hayas elegido para ser tu amigobot 💪, te ayudaré en lo que necesites desde ahora en más :). " + notRegistred;
                 /// <summary>
                 /// We create the object notSubscribeUser here according to the creator Pattern because this class is an expert of this type of objects.
                 /// </summary>

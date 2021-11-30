@@ -15,6 +15,12 @@ namespace src.Library.Class.Logic_Bot
         public MessageReceived(ITelegramBotClient client){
             this.Client = client;
         }
+
+        public static void onListening(){
+            /*Message message = messageEventArgs.Message
+            return MessageReceived;*/
+        }
+
         public static async void OnMessage(object sender, MessageEventArgs messageEventArgs)
         {
             /// <summary>

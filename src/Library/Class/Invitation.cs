@@ -12,12 +12,15 @@ namespace src.Library.Class
 
         bool confirmInvitation;
 
+         public int idInvitation { get; set; }
         public string guestName { get; set; }
         public string adminName { get; set; }
-        public Token Token1 { get; set; }
+        public Token tokenInvitation { get; set; }
+       
 
         public Invitation(){
-            Token1 = null;
+            idInvitation = 0;
+            tokenInvitation = null;
             guestName = "";
             adminName = "";
             confirmInvitation = false;
@@ -27,7 +30,7 @@ namespace src.Library.Class
         {
             Token token = new Token();
             token.CreateToken();
-            this.Token1 = token;
+            this.tokenInvitation = token;
             this.guestName = guestNameSend;
             this.adminName = adminNameSend;
         }

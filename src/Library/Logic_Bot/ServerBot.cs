@@ -14,6 +14,7 @@ namespace src.Library.Class.Logic_Bot
 {
     public class ServerBot
     {
+        public static ITelegramBotClient bot;
         /// <summary>
         /// This method start the listening of the bot
         /// </summary>
@@ -34,7 +35,7 @@ namespace src.Library.Class.Logic_Bot
             /// </summary>
             /// <param name="bot">The instance of the client</param>
 
-            ITelegramBotClient bot = telegramBot.Client;
+            bot = telegramBot.Client;
             /// <summary>
             /// If a new message is received it will be sended to the class messageReceived to process it.
             /// </summary>

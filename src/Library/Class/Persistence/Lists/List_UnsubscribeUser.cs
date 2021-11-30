@@ -1,12 +1,9 @@
-using System;
 using System.Collections.Generic;
 using Library;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Linq;
 using src.Library.Class.Persistence.DataBase_Logic;
-using Newtonsoft.Json;
-using System.IO;
 
 namespace src.Library.Class.Persistence.Lists
 {
