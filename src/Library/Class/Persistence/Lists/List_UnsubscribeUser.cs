@@ -5,15 +5,18 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Linq;
 using src.Library.Class.Persistence.DataBase_Logic;
+using Newtonsoft.Json;
+using System.IO;
+
 namespace src.Library.Class.Persistence.Lists
 {
     public class List_UnsubscribeUser{
         [JsonInclude]
-        public List<NotSubscribeUser> ListNotSubscribeUser = new List<NotSubscribeUser>();
+        public static List<NotSubscribeUser> ListNotSubscribeUser = new List<NotSubscribeUser>();
  
         private static List_UnsubscribeUser instance;
 
-        [JsonConstructor]
+        [System.Text.Json.Serialization.JsonConstructor]
         public List_UnsubscribeUser()
         {
             Initialize();
@@ -21,7 +24,7 @@ namespace src.Library.Class.Persistence.Lists
 
         public void Initialize()
         {
-            this.ListNotSubscribeUser = new List<NotSubscribeUser>();
+            ListNotSubscribeUser = new List<NotSubscribeUser>();
         }
 
         public static List_UnsubscribeUser Instance
@@ -38,13 +41,13 @@ namespace src.Library.Class.Persistence.Lists
 
         public void Add(NotSubscribeUser user)
         {
-            this.ListNotSubscribeUser.Add(user);
+            ListNotSubscribeUser.Add(user);
             this.save();
         }
 
         public void Remove(NotSubscribeUser user)
         {
-            this.ListNotSubscribeUser.Remove(user);
+            ListNotSubscribeUser.Remove(user);
         }
 
         private static JsonSerializerOptions options = new()
@@ -55,12 +58,26 @@ namespace src.Library.Class.Persistence.Lists
 
         public string ConvertToJson()
         {
-            return JsonSerializer.Serialize(this);
+            return System.Text.Json.JsonSerializer.Serialize(ListNotSubscribeUser);
         }
 
         public void save(){
             string json = this.ConvertToJson();
             System.IO.File.WriteAllText(@"../Library/Class/Persistence/Data/Entidades/unsubscribeActiveUser.json", json);
+        }
+
+        public List<NotSubscribeUser> Deserialize(){
+            
+            //La linea de abajo no devuelve al txt es solo el url
+            string jsonString = System.IO.File.ReadAllText(@"../Library/Class/Persistence/Data/Entidades/unsubscribeActiveUser.json");
+            ListNotSubscribeUser = System.Text.Json.JsonSerializer.Deserialize<List<NotSubscribeUser>>(jsonString, options);
+
+            return ListNotSubscribeUser;
+        }
+
+        public static int LastId(){
+            int userId = ListNotSubscribeUser.Last().IdUser + 1;
+            return userId;
         }
     }
 }

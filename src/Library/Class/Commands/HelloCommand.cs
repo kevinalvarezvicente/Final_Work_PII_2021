@@ -38,8 +38,11 @@ namespace src.Library.Class.Commands
             if (message.Text.ToLower().Trim().Equals("hola"))
             {
                 response = "¡Hola "+chatInfo.FirstName+" 👋! Me llamo Arthur 🧑‍💼. Que bueno que me hayas elegido para ser tu amigobot 💪, te ayudaré en lo que necesites desde ahora en más. \n /Login: Para loguearte \n /Invitacion: Para registrarte \n /Material: Para crear un material \n /Publicar: Para publicar un material";
-
-                NotSubscribeUser notSubscribeUser = new NotSubscribeUser(0,"Telegram",chatInfo.Id.ToString());
+                /// <summary>
+                /// We create the object notSubscribeUser here according to the creator Pattern because this class is an expert of this type of objects.
+                /// </summary>
+                /// <returns></returns>
+                NotSubscribeUser notSubscribeUser = new NotSubscribeUser(List_UnsubscribeUser.LastId(),"Telegram",chatInfo.Id.ToString());
                 List_UnsubscribeUser.Instance.Add(notSubscribeUser);
 
                 return true;
