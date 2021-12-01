@@ -1,9 +1,4 @@
 using Telegram.Bot.Types;
-using Telegram.Bot;
-using System.Threading;
-using System.Threading.Tasks;
-using Library;
-using src.Library.Class.Logic_Bot;
 
 namespace src.Library.Class.Commands
 {
@@ -12,10 +7,11 @@ namespace src.Library.Class.Commands
         
         public InvitationCommand(BaseCommand next) : base(next)
         {
-            this.Keywords = new string[] { "/registrame" };
         }
 
-        
+        /*
+            Si el usuario selecciono /registrame se le solicita un token.
+        */
         protected override bool InternalHandle(Message message, out string response)
         {
             if (message.Text.ToLower().Equals("/registrame"))

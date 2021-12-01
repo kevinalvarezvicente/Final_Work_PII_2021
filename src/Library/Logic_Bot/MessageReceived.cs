@@ -10,8 +10,20 @@ namespace src.Library.Class.Logic_Bot
         public ITelegramBotClient Client { get; set; }
 
         public static Initialize_CommandList commands = new Initialize_CommandList();
-        public static ICommand commandICommand = commands.CommandICommand;
-        
+
+        public static bool hasToken = false;
+        public static bool isReqistered = false;
+        public static Company company = null;
+        public static ICommand commandICommand(){
+            if (isReqistered)
+                return commands.registered;
+            else
+                if (hasToken)
+                    return commands.toRegister;
+                else
+                    return commands.notRegistered;
+
+        }        
         public MessageReceived(ITelegramBotClient client){
             this.Client = client;
         }
@@ -49,7 +61,7 @@ namespace src.Library.Class.Logic_Bot
                 /// <param name="response">The response that the bot will send.</param>
                 string response;
 
-                ICommand result = commandICommand.Handle(message, out response);
+                ICommand result = commandICommand().Handle(message, out response);
 
                 if (result == null)
                 {
@@ -58,6 +70,10 @@ namespace src.Library.Class.Logic_Bot
                 }
                 else
                 {
+                    if (response == "Token Correcto, Ingrese cualquier mensaje para continuar")
+                        hasToken= true;
+                    if (response == "Localidad de empresa registrado con exito, Su empresa ha sido registrada.")
+                        isReqistered= true;
                     await client.SendTextMessageAsync(
                         chatId: chatInfo.Id,
                         text: response);

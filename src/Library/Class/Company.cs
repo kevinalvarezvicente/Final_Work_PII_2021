@@ -1,11 +1,11 @@
-namespace Library
+namespace src.Library.Class
 {
     public class Company
     {
-        public string CompanyName { get; private set; }
-        public string rut { get; private set; }
-        public string CompanySector { get; private set; }
-        public string Department { get; private set; }
+        public string CompanyName { get; set; }
+        public string rut { get; set; }
+        public string CompanySector { get; set; }
+        public string Department { get; set; }
 
 
         public Company(string CompanyName, string rut, string CompanySector, string Department){
@@ -15,6 +15,9 @@ namespace Library
             this.Department = Department;
         }
 
+        public string ToString(){
+            return "{ Nombre: "+ this.CompanyName + ", Rut: " + this.rut + ", Rubro: " + this.CompanySector + ", Localidad: " + this.Department + " }";
+        }
         
     }
 }
