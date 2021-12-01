@@ -1,9 +1,10 @@
 {
   "$id": "1",
+  "idInvitation": 0,
   "guestName": "Kevin",
   "adminName": "Solutec",
-  "Token1": {
+  "tokenInvitation": {
     "$id": "2",
-    "numberToken": "pO48DDzO7UehdcFCKIWtnA=="
+    "numberToken": "vokjQro1HkWJojQGYSVeSQ=="
   }
 }
